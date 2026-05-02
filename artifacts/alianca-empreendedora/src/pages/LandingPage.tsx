@@ -204,7 +204,7 @@ function HeroSection() {
               <span style={{ color: GOLD, display: "inline-block", minWidth: "2ch" }}>
                 {typed}
               </span>{" "}
-              DE POSICIONAMENTO, MARKETING E VENDAS
+              POSICIONAMENTO, MARKETING E VENDAS
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl" style={{ fontFamily: "Montserrat" }}>
               Você será visto como{" "}
