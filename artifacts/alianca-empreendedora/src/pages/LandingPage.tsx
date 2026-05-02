@@ -490,7 +490,7 @@ function ReelSection() {
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedList className="flex flex-col md:flex-row gap-6 justify-center">
+        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
             { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
@@ -499,12 +499,10 @@ function ReelSection() {
             <motion.div
               key={reel.id}
               variants={fadeUp}
-              className="rounded-2xl flex-1"
+              className="rounded-2xl w-full"
               style={{
                 border: `1px solid rgba(185,144,82,0.3)`,
                 boxShadow: "0 0 40px rgba(185,144,82,0.15)",
-                maxWidth: 400,
-                minWidth: 280,
                 overflow: "hidden",
                 position: "relative",
                 height: 470,
