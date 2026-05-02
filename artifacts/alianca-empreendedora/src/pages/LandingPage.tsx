@@ -273,6 +273,7 @@ function HeroSection() {
         {/* Speaker image */}
         <motion.div
           className="flex-none flex justify-center lg:justify-end lg:sticky lg:top-24"
+          style={{ marginTop: "4rem" }}
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
