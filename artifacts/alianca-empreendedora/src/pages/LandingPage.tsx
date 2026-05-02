@@ -738,14 +738,14 @@ function MentorSection() {
               Especialista em Posicionamento Estratégico
             </h3>
             <p className="text-gray-300 leading-relaxed mb-8" style={{ fontFamily: "Montserrat", lineHeight: 1.9 }}>
-              Com mais de 15 anos de experiência prática e trajetória acadêmica na área da Psicologia, Pablo
+              Com mais de 25 anos de experiência prática e trajetória acadêmica na área da Psicologia, Pablo
               Pitani é uma referência na transformação de empreendedores que buscam crescimento com autenticidade,
               propósito e consistência estratégica. Especialista em posicionamento empresarial, ele une profundo
               domínio do comportamento humano com inteligência de mercado para estruturar marcas pessoais sólidas,
-              coerentes e altamente competitivas. Mais de 10 mil pessoas já foram impactadas por seus ensinamentos.
+              coerentes e altamente competitivas. Mais de 15 mil pessoas já foram impactadas por seus ensinamentos.
             </p>
             <div className="flex flex-wrap gap-4">
-              {["15+ Anos de Experiência", "10.000+ Empresários Impactados", "Psicólogo e Especialista"].map((badge, i) => (
+              {["25+ Anos de Experiência", "15.000+ Pessoas Impactadas", "Psicólogo e Especialista"].map((badge, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full text-sm font-semibold"
