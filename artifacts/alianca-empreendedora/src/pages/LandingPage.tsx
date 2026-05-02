@@ -8,35 +8,41 @@ const GOLD = "#B99052";
 
 function useTypewriter(words: string[], typingSpeed = 100, deletingSpeed = 60, pauseMs = 1800) {
   const [displayed, setDisplayed] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const state = useRef({ wordIndex: 0, isDeleting: false, displayed: "" });
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const tick = useCallback(() => {
-    const current = words[wordIndex % words.length];
-    if (!isDeleting) {
-      setDisplayed(current.slice(0, displayed.length + 1));
-      if (displayed.length + 1 === current.length) {
-        timeout.current = setTimeout(() => setIsDeleting(true), pauseMs);
-        return;
-      }
-      timeout.current = setTimeout(tick, typingSpeed);
-    } else {
-      setDisplayed(current.slice(0, displayed.length - 1));
-      if (displayed.length - 1 === 0) {
-        setIsDeleting(false);
-        setWordIndex((i) => (i + 1) % words.length);
-        timeout.current = setTimeout(tick, typingSpeed);
-        return;
-      }
-      timeout.current = setTimeout(tick, deletingSpeed);
-    }
-  }, [displayed, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseMs]);
-
   useEffect(() => {
+    function tick() {
+      const { wordIndex, isDeleting } = state.current;
+      const current = words[wordIndex % words.length];
+      const cur = state.current.displayed;
+
+      if (!isDeleting) {
+        const next = current.slice(0, cur.length + 1);
+        state.current.displayed = next;
+        setDisplayed(next);
+        if (next === current) {
+          state.current.isDeleting = true;
+          timeout.current = setTimeout(tick, pauseMs);
+        } else {
+          timeout.current = setTimeout(tick, typingSpeed);
+        }
+      } else {
+        const next = current.slice(0, cur.length - 1);
+        state.current.displayed = next;
+        setDisplayed(next);
+        if (next === "") {
+          state.current.isDeleting = false;
+          state.current.wordIndex = (wordIndex + 1) % words.length;
+          timeout.current = setTimeout(tick, typingSpeed);
+        } else {
+          timeout.current = setTimeout(tick, deletingSpeed);
+        }
+      }
+    }
     timeout.current = setTimeout(tick, typingSpeed);
     return () => { if (timeout.current) clearTimeout(timeout.current); };
-  }, [tick, typingSpeed]);
+  }, []);
 
   return displayed;
 }
