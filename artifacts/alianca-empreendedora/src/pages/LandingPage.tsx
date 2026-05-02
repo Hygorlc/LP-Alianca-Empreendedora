@@ -479,7 +479,7 @@ function PhotosSection() {
 function ReelSection() {
   return (
     <section className="py-24 px-6" style={{ background: "#0d0d0d" }}>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <AnimatedSection className="text-center mb-12">
           <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
             Veja como é:
@@ -490,7 +490,7 @@ function ReelSection() {
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedList className="flex flex-col md:flex-row gap-6 justify-center">
+        <AnimatedList className="flex flex-col md:flex-row gap-8 justify-center items-start">
           {[
             { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
             { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
@@ -498,31 +498,53 @@ function ReelSection() {
             <motion.div
               key={reel.id}
               variants={fadeUp}
-              className="rounded-2xl flex-1"
+              data-testid={reel.testId}
               style={{
-                border: `1px solid rgba(185,144,82,0.3)`,
-                boxShadow: "0 0 40px rgba(185,144,82,0.15)",
+                flex: "1 1 320px",
                 maxWidth: 400,
-                minWidth: 280,
+                borderRadius: 16,
+                border: `1px solid rgba(185,144,82,0.35)`,
+                boxShadow: "0 0 40px rgba(185,144,82,0.15)",
                 overflow: "hidden",
                 position: "relative",
-                height: 490,
+                height: 500,
+                background: "#111",
               }}
-              data-testid={reel.testId}
             >
+              {/* overlay to hide top header */}
+              <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 60,
+                background: "#111",
+                zIndex: 2,
+                pointerEvents: "none",
+              }} />
+              {/* overlay to hide bottom footer */}
+              <div style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: 110,
+                background: "#111",
+                zIndex: 2,
+                pointerEvents: "none",
+              }} />
               <iframe
                 src={`https://www.instagram.com/reel/${reel.id}/embed/`}
                 style={{
                   border: "none",
                   display: "block",
                   width: "100%",
-                  height: 760,
+                  height: 700,
                   position: "absolute",
-                  top: -56,
+                  top: 0,
                   left: 0,
                 }}
                 allowFullScreen
-                scrolling="no"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
                 title="Reel do evento Aliança Empreendedora"
               />
