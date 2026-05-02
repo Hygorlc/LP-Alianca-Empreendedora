@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "budN0jW7eSZ4TOoe-abDw"
+uri = "file://artifacts/alianca-empreendedora/public/images/hero.png"
+type = "image"
+title = "Hero speaker dark background"
+
+[[generated]]
+id = "yn1yDBuvRUvRPyEEE8mpP"
+uri = "file://artifacts/alianca-empreendedora/public/images/founder.png"
+type = "image"
+title = "Founder led growth masterclass"
