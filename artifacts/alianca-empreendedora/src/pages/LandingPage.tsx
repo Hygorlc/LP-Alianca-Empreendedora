@@ -192,7 +192,7 @@ function HeroSection() {
         style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-start gap-12">
         {/* Text content */}
         <div className="flex-1">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -206,11 +206,18 @@ function HeroSection() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 uppercase"
               style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
             >
-              TREINAMENTO PRESENCIAL{" "}
-              <span style={{ color: GOLD, display: "inline-block", minWidth: "2ch" }}>
+              <span className="block">TREINAMENTO PRESENCIAL</span>
+              <span
+                className="block"
+                style={{
+                  color: GOLD,
+                  minHeight: "1.2em",
+                  display: "block",
+                }}
+              >
                 {typed}
-              </span>{" "}
-              POSICIONAMENTO, MARKETING E VENDAS
+              </span>
+              <span className="block">POSICIONAMENTO, MARKETING E VENDAS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl" style={{ fontFamily: "Montserrat" }}>
               Você será visto como{" "}
@@ -265,7 +272,7 @@ function HeroSection() {
 
         {/* Speaker image */}
         <motion.div
-          className="flex-1 flex justify-center lg:justify-end"
+          className="flex-none flex justify-center lg:justify-end lg:sticky lg:top-24"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
