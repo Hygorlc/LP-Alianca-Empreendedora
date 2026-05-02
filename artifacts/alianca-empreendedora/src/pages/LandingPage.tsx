@@ -476,6 +476,47 @@ function PhotosSection() {
   );
 }
 
+function ReelSection() {
+  return (
+    <section className="py-24 px-6" style={{ background: "#0d0d0d" }}>
+      <div className="max-w-2xl mx-auto">
+        <AnimatedSection className="text-center mb-12">
+          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
+            Veja como é:
+          </p>
+          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
+            O evento em vídeo
+          </h2>
+          <GoldDivider />
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div
+            className="rounded-2xl overflow-hidden mx-auto"
+            style={{
+              border: `1px solid rgba(185,144,82,0.3)`,
+              boxShadow: "0 0 40px rgba(185,144,82,0.15)",
+              maxWidth: 400,
+            }}
+            data-testid="embed-instagram-reel"
+          >
+            <iframe
+              src="https://www.instagram.com/reel/DVMehuniAIe/embed/"
+              width="400"
+              height="700"
+              style={{ border: "none", display: "block", width: "100%", minHeight: 500 }}
+              allowFullScreen
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              title="Reel do evento Aliança Empreendedora"
+            />
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 function TestimonialsSection() {
   return (
     <section className="py-24 px-6 diagonal-texture" style={{ background: "#0a0800" }}>
@@ -845,6 +886,7 @@ export default function LandingPage() {
       <ThemeSection />
       <FeaturesSection />
       <PhotosSection />
+      <ReelSection />
       <TestimonialsSection />
       <StatementSection />
       <TicketSection />
