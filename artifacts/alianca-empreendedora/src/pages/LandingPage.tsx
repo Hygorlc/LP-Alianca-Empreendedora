@@ -498,18 +498,29 @@ function ReelSection() {
             <motion.div
               key={reel.id}
               variants={fadeUp}
-              className="rounded-2xl overflow-hidden flex-1"
+              className="rounded-2xl flex-1"
               style={{
                 border: `1px solid rgba(185,144,82,0.3)`,
                 boxShadow: "0 0 40px rgba(185,144,82,0.15)",
                 maxWidth: 400,
                 minWidth: 280,
+                overflow: "hidden",
+                position: "relative",
+                height: 600,
               }}
               data-testid={reel.testId}
             >
               <iframe
                 src={`https://www.instagram.com/reel/${reel.id}/embed/`}
-                style={{ border: "none", display: "block", width: "100%", height: 700 }}
+                style={{
+                  border: "none",
+                  display: "block",
+                  width: "100%",
+                  height: 760,
+                  position: "absolute",
+                  top: -56,
+                  left: 0,
+                }}
                 allowFullScreen
                 scrolling="no"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
