@@ -479,7 +479,7 @@ function PhotosSection() {
 function ReelSection() {
   return (
     <section className="py-24 px-6" style={{ background: "#0d0d0d" }}>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <AnimatedSection className="text-center mb-12">
           <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
             Veja como é:
@@ -494,6 +494,7 @@ function ReelSection() {
           {[
             { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
             { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
+            { id: "DWzbWqxiNT-", testId: "embed-instagram-reel-3" },
           ].map((reel) => (
             <motion.div
               key={reel.id}
