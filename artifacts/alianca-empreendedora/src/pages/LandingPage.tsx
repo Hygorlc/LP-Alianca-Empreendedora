@@ -490,28 +490,34 @@ function ReelSection() {
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedSection>
-          <div
-            className="rounded-2xl overflow-hidden mx-auto"
-            style={{
-              border: `1px solid rgba(185,144,82,0.3)`,
-              boxShadow: "0 0 40px rgba(185,144,82,0.15)",
-              maxWidth: 400,
-            }}
-            data-testid="embed-instagram-reel"
-          >
-            <iframe
-              src="https://www.instagram.com/reel/DVMehuniAIe/embed/"
-              width="400"
-              height="700"
-              style={{ border: "none", display: "block", width: "100%", minHeight: 500 }}
-              allowFullScreen
-              scrolling="no"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              title="Reel do evento Aliança Empreendedora"
-            />
-          </div>
-        </AnimatedSection>
+        <AnimatedList className="flex flex-col md:flex-row gap-6 justify-center">
+          {[
+            { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
+            { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
+          ].map((reel) => (
+            <motion.div
+              key={reel.id}
+              variants={fadeUp}
+              className="rounded-2xl overflow-hidden flex-1"
+              style={{
+                border: `1px solid rgba(185,144,82,0.3)`,
+                boxShadow: "0 0 40px rgba(185,144,82,0.15)",
+                maxWidth: 400,
+                minWidth: 280,
+              }}
+              data-testid={reel.testId}
+            >
+              <iframe
+                src={`https://www.instagram.com/reel/${reel.id}/embed/`}
+                style={{ border: "none", display: "block", width: "100%", height: 700 }}
+                allowFullScreen
+                scrolling="no"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                title="Reel do evento Aliança Empreendedora"
+              />
+            </motion.div>
+          ))}
+        </AnimatedList>
       </div>
     </section>
   );
