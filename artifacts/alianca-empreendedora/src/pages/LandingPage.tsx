@@ -490,7 +490,7 @@ function ReelSection() {
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedList className="flex flex-col md:flex-row gap-8 justify-center items-start">
+        <AnimatedList className="flex flex-col md:flex-row gap-6 justify-center">
           {[
             { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
             { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
@@ -498,53 +498,31 @@ function ReelSection() {
             <motion.div
               key={reel.id}
               variants={fadeUp}
-              data-testid={reel.testId}
+              className="rounded-2xl flex-1"
               style={{
-                flex: "1 1 320px",
-                maxWidth: 400,
-                borderRadius: 16,
-                border: `1px solid rgba(185,144,82,0.35)`,
+                border: `1px solid rgba(185,144,82,0.3)`,
                 boxShadow: "0 0 40px rgba(185,144,82,0.15)",
+                maxWidth: 400,
+                minWidth: 280,
                 overflow: "hidden",
                 position: "relative",
-                height: 500,
-                background: "#111",
+                height: 600,
               }}
+              data-testid={reel.testId}
             >
-              {/* overlay to hide top header */}
-              <div style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: 60,
-                background: "#111",
-                zIndex: 2,
-                pointerEvents: "none",
-              }} />
-              {/* overlay to hide bottom footer */}
-              <div style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: 110,
-                background: "#111",
-                zIndex: 2,
-                pointerEvents: "none",
-              }} />
               <iframe
                 src={`https://www.instagram.com/reel/${reel.id}/embed/`}
                 style={{
                   border: "none",
                   display: "block",
                   width: "100%",
-                  height: 700,
+                  height: 760,
                   position: "absolute",
-                  top: 0,
+                  top: -56,
                   left: 0,
                 }}
                 allowFullScreen
+                scrolling="no"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
                 title="Reel do evento Aliança Empreendedora"
               />
