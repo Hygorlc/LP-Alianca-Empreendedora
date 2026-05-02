@@ -1,10 +1,45 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, ChevronDown, CheckCircle, Mic, BarChart2, Users, Star, MessageCircle } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const GOLD = "#B99052";
+
+function useTypewriter(words: string[], typingSpeed = 100, deletingSpeed = 60, pauseMs = 1800) {
+  const [displayed, setDisplayed] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const tick = useCallback(() => {
+    const current = words[wordIndex % words.length];
+    if (!isDeleting) {
+      setDisplayed(current.slice(0, displayed.length + 1));
+      if (displayed.length + 1 === current.length) {
+        timeout.current = setTimeout(() => setIsDeleting(true), pauseMs);
+        return;
+      }
+      timeout.current = setTimeout(tick, typingSpeed);
+    } else {
+      setDisplayed(current.slice(0, displayed.length - 1));
+      if (displayed.length - 1 === 0) {
+        setIsDeleting(false);
+        setWordIndex((i) => (i + 1) % words.length);
+        timeout.current = setTimeout(tick, typingSpeed);
+        return;
+      }
+      timeout.current = setTimeout(tick, deletingSpeed);
+    }
+  }, [displayed, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseMs]);
+
+  useEffect(() => {
+    timeout.current = setTimeout(tick, typingSpeed);
+    return () => { if (timeout.current) clearTimeout(timeout.current); };
+  }, [tick, typingSpeed]);
+
+  return displayed;
+}
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -130,6 +165,7 @@ function GoldDivider() {
 }
 
 function HeroSection() {
+  const typed = useTypewriter(["EM PORTO ALEGRE"], 90, 55, 2200);
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
@@ -165,7 +201,21 @@ function HeroSection() {
               style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
             >
               TREINAMENTO PRESENCIAL{" "}
-              <span style={{ color: GOLD }}>EM PORTO ALEGRE</span>{" "}
+              <span style={{ color: GOLD, display: "inline-block", minWidth: "2ch" }}>
+                {typed}
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: 3,
+                    height: "0.85em",
+                    background: GOLD,
+                    marginLeft: 3,
+                    verticalAlign: "middle",
+                    borderRadius: 1,
+                    animation: "blink 1s step-start infinite",
+                  }}
+                />
+              </span>{" "}
               DE POSICIONAMENTO, MARKETING E VENDAS
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl" style={{ fontFamily: "Montserrat" }}>

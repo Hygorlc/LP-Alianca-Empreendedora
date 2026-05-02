@@ -209,6 +209,12 @@
   }
 }
 
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Gold glow utility */
 .gold-glow {
   box-shadow: 0 0 20px rgba(185, 144, 82, 0.3);
