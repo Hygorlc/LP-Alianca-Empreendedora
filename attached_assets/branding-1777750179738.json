@@ -1,0 +1,134 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "GFS Didot",
+      "role": "heading"
+    },
+    {
+      "family": "Roboto",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#B99052",
+    "secondary": "#69727D",
+    "accent": "#B99052",
+    "background": "#000000",
+    "textPrimary": "#000000",
+    "link": "#28303D"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Roboto",
+      "heading": "GFS Didot"
+    },
+    "fontStacks": {
+      "heading": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen-Sans",
+        "Ubuntu",
+        "Cantarell",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "body": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen-Sans",
+        "Ubuntu",
+        "Cantarell",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Montserrat",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "20px",
+      "h2": "38px",
+      "body": "19px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "6px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "transparent",
+      "textColor": "#000000",
+      "borderColor": "#B99052",
+      "borderRadius": "9px",
+      "borderRadiusCorners": {
+        "topLeft": "9px",
+        "topRight": "9px",
+        "bottomRight": "9px",
+        "bottomLeft": "9px"
+      },
+      "shadow": "rgb(185, 144, 82) 0px 0px 10px 0px"
+    },
+    "buttonSecondary": {
+      "background": "#BEBEBE",
+      "textColor": "#28303D",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": "https://pablopitani.com.br/wp-content/uploads/2025/12/cropped-ChatGPT-Image-29-de-dez.-de-2025-19_36_48-32x32.png",
+    "ogImage": null
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 1,
+      "text": "Quero garantir minha vaga",
+      "reasoning": "Button #1 has a more action-oriented text ('Quero garantir minha vaga') and features a distinct border color (#B99052), which aligns with the primary brand color, making it stand out as the primary CTA."
+    },
+    "secondary": {
+      "index": 0,
+      "text": "Quero meu ingresso",
+      "reasoning": "Button #0 has a neutral background color (#BEBEBE) and less prominent text, making it suitable as a secondary option."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "entrepreneurs and business professionals"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": false,
+      "llmSucceeded": false,
+      "finalSource": "none"
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
