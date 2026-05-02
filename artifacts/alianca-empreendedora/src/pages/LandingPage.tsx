@@ -506,7 +506,7 @@ function ReelSection() {
                 minWidth: 280,
                 overflow: "hidden",
                 position: "relative",
-                height: 600,
+                height: 490,
               }}
               data-testid={reel.testId}
             >
