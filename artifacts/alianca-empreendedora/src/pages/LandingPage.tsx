@@ -203,18 +203,6 @@ function HeroSection() {
               TREINAMENTO PRESENCIAL{" "}
               <span style={{ color: GOLD, display: "inline-block", minWidth: "2ch" }}>
                 {typed}
-                <span
-                  style={{
-                    display: "inline-block",
-                    width: 3,
-                    height: "0.85em",
-                    background: GOLD,
-                    marginLeft: 3,
-                    verticalAlign: "middle",
-                    borderRadius: 1,
-                    animation: "blink 1s step-start infinite",
-                  }}
-                />
               </span>{" "}
               DE POSICIONAMENTO, MARKETING E VENDAS
             </h1>
