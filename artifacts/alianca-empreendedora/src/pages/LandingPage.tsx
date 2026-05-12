@@ -301,9 +301,17 @@ function HeroSection() {
                 width: "110%",
                 height: "120%",
                 border: "none",
-                pointerEvents: "none",
               }}
               data-testid="video-hero-youtube"
+            />
+            {/* Full overlay — blocks all mouse/touch interaction with the YouTube iframe */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 10,
+                cursor: "default",
+              }}
             />
           </div>
         </motion.div>
