@@ -250,10 +250,10 @@ function HeroVideo() {
             allowFullScreen
             style={{
               position: "absolute",
-              top: "-10%",
+              top: "-14%",
               left: "-5%",
               width: "110%",
-              height: "120%",
+              height: "128%",
               border: "none",
               zIndex: 2,
             }}
