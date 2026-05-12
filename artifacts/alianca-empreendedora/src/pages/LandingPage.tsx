@@ -680,7 +680,7 @@ function TestimonialsSection() {
               <img
                 src="/5stars.png"
                 alt="5 estrelas"
-                style={{ height: 52, width: "auto", objectFit: "contain" }}
+                style={{ height: 100, width: "auto", objectFit: "contain" }}
               />
               <p className="text-gray-300 text-sm leading-relaxed italic" style={{ fontFamily: "Montserrat" }}>
                 "{t.text}"
