@@ -519,7 +519,7 @@ function ReelSection() {
                 boxShadow: "0 0 40px rgba(185,144,82,0.15)",
                 overflow: "hidden",
                 position: "relative",
-                height: 470,
+                height: 360,
               }}
               data-testid={reel.testId}
             >
