@@ -175,10 +175,15 @@ function GoldDivider() {
 
 function HeroVideo() {
   const [iframeVisible, setIframeVisible] = useState(false);
+  const [muted, setMuted] = useState(true);
+
   useEffect(() => {
     const t = setTimeout(() => setIframeVisible(true), 2800);
     return () => clearTimeout(t);
   }, []);
+
+  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=${muted ? 1 : 0}&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1`;
+
   return (
     <div
       className="relative rounded-2xl overflow-hidden w-80 md:w-[440px] lg:w-[580px]"
@@ -206,7 +211,8 @@ function HeroVideo() {
       {/* iframe — only mounted after delay so it starts already playing */}
       {iframeVisible && (
         <iframe
-          src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1"
+          key={String(muted)}
+          src={src}
           title="Pablo Pitani — Aliança Empreendedora"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -224,6 +230,33 @@ function HeroVideo() {
       )}
       {/* Overlay — blocks hover/touch so YouTube UI never triggers */}
       <div style={{ position: "absolute", inset: 0, zIndex: 10, cursor: "default" }} />
+      {/* Mute/unmute button */}
+      {iframeVisible && (
+        <button
+          onClick={() => setMuted((m) => !m)}
+          aria-label={muted ? "Ativar som" : "Silenciar"}
+          style={{
+            position: "absolute",
+            bottom: 12,
+            right: 12,
+            zIndex: 20,
+            background: "rgba(0,0,0,0.6)",
+            border: `1px solid ${GOLD}`,
+            borderRadius: "50%",
+            width: 36,
+            height: 36,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            color: GOLD,
+            fontSize: 16,
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          {muted ? "🔇" : "🔊"}
+        </button>
+      )}
     </div>
   );
 }
