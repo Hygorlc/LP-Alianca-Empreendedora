@@ -677,11 +677,11 @@ function TestimonialsSection() {
               data-testid={`card-testimonial-${i}`}
             >
               <MessageCircle size={24} color={GOLD} />
-              <div className="flex gap-1">
-                {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star key={j} size={14} fill={GOLD} color={GOLD} />
-                ))}
-              </div>
+              <img
+                src="/5stars.png"
+                alt="5 estrelas"
+                style={{ height: 32, width: "auto", objectFit: "contain" }}
+              />
               <p className="text-gray-300 text-sm leading-relaxed italic" style={{ fontFamily: "Montserrat" }}>
                 "{t.text}"
               </p>
