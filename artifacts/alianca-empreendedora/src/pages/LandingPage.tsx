@@ -173,6 +173,61 @@ function GoldDivider() {
   );
 }
 
+function HeroVideo() {
+  const [iframeVisible, setIframeVisible] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setIframeVisible(true), 2800);
+    return () => clearTimeout(t);
+  }, []);
+  return (
+    <div
+      className="relative rounded-2xl overflow-hidden w-72 md:w-96 lg:w-[480px]"
+      style={{
+        border: `2px solid rgba(185,144,82,0.4)`,
+        boxShadow: "0 0 60px rgba(185,144,82,0.2)",
+        aspectRatio: "16/9",
+      }}
+    >
+      {/* Thumbnail shown while iframe loads */}
+      <img
+        src="https://img.youtube.com/vi/idRuRg9-n8o/maxresdefault.jpg"
+        alt="Pablo Pitani"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+          transition: "opacity 0.8s",
+          opacity: iframeVisible ? 0 : 1,
+        }}
+      />
+      {/* iframe — only mounted after delay so it starts already playing */}
+      {iframeVisible && (
+        <iframe
+          src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1"
+          title="Pablo Pitani — Aliança Empreendedora"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            position: "absolute",
+            top: "-10%",
+            left: "-5%",
+            width: "110%",
+            height: "120%",
+            border: "none",
+            zIndex: 2,
+          }}
+          data-testid="video-hero-youtube"
+        />
+      )}
+      {/* Overlay — blocks hover/touch so YouTube UI never triggers */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 10, cursor: "default" }} />
+    </div>
+  );
+}
+
 function HeroSection() {
   const typed = useTypewriter(["EM PORTO ALEGRE"], 90, 55, 2200);
   return (
@@ -281,39 +336,7 @@ function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div
-            className="relative rounded-2xl overflow-hidden w-72 md:w-96 lg:w-[480px]"
-            style={{
-              border: `2px solid rgba(185,144,82,0.4)`,
-              boxShadow: "0 0 60px rgba(185,144,82,0.2)",
-              aspectRatio: "16/9",
-            }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1"
-              title="Pablo Pitani — Aliança Empreendedora"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: "absolute",
-                top: "-10%",
-                left: "-5%",
-                width: "110%",
-                height: "120%",
-                border: "none",
-              }}
-              data-testid="video-hero-youtube"
-            />
-            {/* Full overlay — blocks all mouse/touch interaction with the YouTube iframe */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 10,
-                cursor: "default",
-              }}
-            />
-          </div>
+          <HeroVideo />
         </motion.div>
       </div>
 
