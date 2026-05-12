@@ -273,7 +273,7 @@ function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Speaker image */}
+        {/* Hero video */}
         <motion.div
           className="flex-none flex justify-center lg:justify-end lg:sticky lg:top-24"
           style={{ marginTop: "4rem" }}
@@ -281,17 +281,28 @@ function HeroSection() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div className="relative">
-            <div
-              className="absolute inset-0 rounded-full pointer-events-none"
-              style={{ background: "radial-gradient(circle, rgba(185,144,82,0.2) 0%, transparent 70%)" }}
-            />
-            <img
-              src="https://pablopitani.com.br/wp-content/uploads/elementor/thumbs/ChatGPT-Image-29-de-dez.-de-2025-19_36_48-rgw2gstnvxpfzssl7zts9aj0qakzo7spixh7mak8l8.png"
-              alt="Pablo Pitani"
-              className="relative z-10 w-72 md:w-96 lg:w-auto lg:max-w-md object-contain drop-shadow-2xl"
-              style={{ filter: "drop-shadow(0 0 40px rgba(185,144,82,0.3))" }}
-              data-testid="img-hero-speaker"
+          <div
+            className="relative rounded-2xl overflow-hidden w-72 md:w-96 lg:w-[480px]"
+            style={{
+              border: `2px solid rgba(185,144,82,0.4)`,
+              boxShadow: "0 0 60px rgba(185,144,82,0.2)",
+              aspectRatio: "16/9",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&rel=0&modestbranding=1"
+              title="Pablo Pitani — Aliança Empreendedora"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+              data-testid="video-hero-youtube"
             />
           </div>
         </motion.div>
