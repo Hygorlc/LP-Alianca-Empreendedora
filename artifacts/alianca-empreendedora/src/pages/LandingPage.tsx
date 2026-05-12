@@ -181,7 +181,7 @@ function HeroVideo() {
   }, []);
   return (
     <div
-      className="relative rounded-2xl overflow-hidden w-72 md:w-96 lg:w-[480px]"
+      className="relative rounded-2xl overflow-hidden w-80 md:w-[440px] lg:w-[580px]"
       style={{
         border: `2px solid rgba(185,144,82,0.4)`,
         boxShadow: "0 0 60px rgba(185,144,82,0.2)",
@@ -261,7 +261,7 @@ function HeroSection() {
               </span>
             </div>
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 uppercase"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 uppercase"
               style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
             >
               <span className="block">TREINAMENTO PRESENCIAL</span>
