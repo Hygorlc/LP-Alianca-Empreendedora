@@ -539,6 +539,18 @@ function ReelSection() {
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
                 title="Reel do evento Aliança Empreendedora"
               />
+              {/* Overlay to block Instagram hover header */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 80,
+                  zIndex: 10,
+                  cursor: "default",
+                }}
+              />
             </motion.div>
           ))}
         </AnimatedList>
