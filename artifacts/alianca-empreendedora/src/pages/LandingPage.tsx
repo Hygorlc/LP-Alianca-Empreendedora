@@ -290,17 +290,18 @@ function HeroSection() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&rel=0&modestbranding=1"
+              src="https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1"
               title="Pablo Pitani — Aliança Empreendedora"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
+                top: "-10%",
+                left: "-5%",
+                width: "110%",
+                height: "120%",
                 border: "none",
+                pointerEvents: "none",
               }}
               data-testid="video-hero-youtube"
             />
