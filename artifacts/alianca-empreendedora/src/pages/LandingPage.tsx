@@ -506,7 +506,7 @@ function FeaturesSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="p-8 rounded-2xl flex flex-col gap-4"
+              className="p-8 rounded-2xl flex flex-col gap-4 items-center text-center"
               style={{
                 background: "rgba(255,255,255,0.03)",
                 border: `1px solid rgba(185,144,82,0.25)`,
