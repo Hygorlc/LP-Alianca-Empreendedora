@@ -101,7 +101,7 @@ const eventFeatures = [
   {
     icon: <Mic size={32} color={GOLD} />,
     title: "PALESTRA",
-    desc: "Será 1 hora de palestra com conteúdo profundo e estratégico, pensado para empresários que querem aplicar na prática. Você aprenderá como atrair mais clientes qualificados, fortalecer seu posicionamento e se diferenciar da concorrência com métodos claros e aplicáveis ao seu negócio.",
+    desc: "Serão 2h de palestra com conteúdo profundo e estratégico, pensado para empresários que querem aplicar tudo na prática. Você aprenderá como atrair mais clientes qualificados, fortalecer seu posicionamento e se diferenciar da concorrência com métodos claros e aplicáveis ao seu negócio.",
   },
   {
     icon: <BarChart2 size={32} color={GOLD} />,
