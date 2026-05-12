@@ -130,18 +130,21 @@ const testimonials = [
     role: "Empresário",
     text: "O evento transformou a forma como eu me comunico com meus clientes. Pablo tem uma didática incrível e os resultados foram imediatos no meu negócio.",
     stars: 5,
+    avatar: "https://ui-avatars.com/api/?name=Carlos+Mendes&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
     name: "Fernanda Lima",
     role: "Empreendedora Digital",
     text: "Nunca imaginei que em 3 horas eu poderia entender tudo que estava faltando no meu posicionamento. Valeu muito cada centavo investido.",
     stars: 5,
+    avatar: "https://ui-avatars.com/api/?name=Fernanda+Lima&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
     name: "Ricardo Santos",
     role: "Consultor",
     text: "A análise de posicionamento ao vivo foi reveladora. Saí com um plano claro de ação e já estou implementando. Recomendo a todos os empresários.",
     stars: 5,
+    avatar: "https://ui-avatars.com/api/?name=Ricardo+Santos&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
 ];
 
@@ -594,9 +597,17 @@ function TestimonialsSection() {
               <p className="text-gray-300 text-sm leading-relaxed italic" style={{ fontFamily: "Montserrat" }}>
                 "{t.text}"
               </p>
-              <div className="mt-auto pt-4" style={{ borderTop: "1px solid rgba(185,144,82,0.2)" }}>
-                <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>{t.name}</p>
-                <p className="text-sm" style={{ color: GOLD, fontFamily: "Montserrat" }}>{t.role}</p>
+              <div className="mt-auto pt-4 flex items-center gap-3" style={{ borderTop: "1px solid rgba(185,144,82,0.2)" }}>
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  className="rounded-full flex-shrink-0"
+                  style={{ width: 40, height: 40, border: `2px solid ${GOLD}`, objectFit: "cover" }}
+                />
+                <div>
+                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>{t.name}</p>
+                  <p className="text-sm" style={{ color: GOLD, fontFamily: "Montserrat" }}>{t.role}</p>
+                </div>
               </div>
             </motion.div>
           ))}
