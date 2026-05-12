@@ -250,11 +250,11 @@ function HeroSection() {
         style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-start gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center lg:items-start gap-12">
         {/* Text content */}
-        <div className="flex-1">
+        <div className="flex-1 w-full text-center lg:text-left">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
               <div style={{ width: 40, height: 2, background: GOLD }} />
               <span style={{ color: GOLD, fontSize: 12, letterSpacing: "0.2em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
                 Evento Presencial
@@ -277,7 +277,7 @@ function HeroSection() {
               </span>
               <span className="block">POSICIONAMENTO, MARKETING E VENDAS</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl" style={{ fontFamily: "Montserrat" }}>
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "Montserrat" }}>
               Você será visto como{" "}
               <span style={{ color: GOLD }} className="font-semibold">autoridade no seu nicho</span>{" "}
               e irá{" "}
@@ -286,7 +286,7 @@ function HeroSection() {
             </p>
 
             {/* Event badges */}
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
               <div
                 className="flex items-center gap-3 px-5 py-3 rounded-lg"
                 style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
@@ -308,30 +308,32 @@ function HeroSection() {
               </div>
             </div>
 
-            <motion.a
-              href="#ingresso"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all"
-              style={{
-                fontFamily: "Montserrat",
-                color: GOLD,
-                border: `2px solid ${GOLD}`,
-                background: "rgba(185,144,82,0.1)",
-                boxShadow: `0 0 24px rgba(185,144,82,0.35), 0 0 48px rgba(185,144,82,0.1)`,
-                letterSpacing: "0.12em",
-              }}
-              data-testid="button-hero-cta"
-            >
-              Quero garantir minha vaga
-            </motion.a>
+            <div className="flex justify-center lg:justify-start">
+              <motion.a
+                href="#ingresso"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all"
+                style={{
+                  fontFamily: "Montserrat",
+                  color: GOLD,
+                  border: `2px solid ${GOLD}`,
+                  background: "rgba(185,144,82,0.1)",
+                  boxShadow: `0 0 24px rgba(185,144,82,0.35), 0 0 48px rgba(185,144,82,0.1)`,
+                  letterSpacing: "0.12em",
+                }}
+                data-testid="button-hero-cta"
+              >
+                Quero garantir minha vaga
+              </motion.a>
+            </div>
           </motion.div>
         </div>
 
         {/* Hero video */}
         <motion.div
-          className="flex-none flex justify-center lg:justify-end lg:sticky lg:top-24"
-          style={{ marginTop: "4rem" }}
+          className="flex-none flex justify-center w-full lg:w-auto lg:justify-end lg:sticky lg:top-24"
+          style={{ marginTop: "0" }}
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
