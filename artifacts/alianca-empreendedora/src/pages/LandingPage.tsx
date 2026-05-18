@@ -159,7 +159,7 @@ const faqs = [
   },
   {
     q: "Quando será o evento?",
-    a: "O evento irá acontecer dia 14 de Maio de 2026 às 19:30",
+    a: "O evento irá acontecer dia 28 de Maio de 2026 às 19:30",
   },
   {
     q: "Quanto tempo irá durar o evento?",
@@ -336,7 +336,7 @@ function HeroSection() {
               >
                 <Calendar size={18} color={GOLD} />
                 <div>
-                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>14 de Maio às 19:30</p>
+                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19:30</p>
                 </div>
               </div>
               <div
