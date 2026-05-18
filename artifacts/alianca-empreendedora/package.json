@@ -72,5 +72,10 @@
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
