@@ -178,9 +178,7 @@ function GoldDivider() {
 }
 
 function HeroVideo() {
-  const [playing, setPlaying] = useState(false);
-
-  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=0&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1`;
+  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1`;
 
   return (
     <div
@@ -191,82 +189,24 @@ function HeroVideo() {
         aspectRatio: "16/9",
       }}
     >
-      {/* Thumbnail + play overlay — shown until user clicks */}
-      {!playing && (
-        <button
-          onClick={() => setPlaying(true)}
-          aria-label="Reproduzir vídeo"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            border: "none",
-            padding: 0,
-            cursor: "pointer",
-            zIndex: 10,
-            background: "transparent",
-          }}
-        >
-          <img
-            src="https://img.youtube.com/vi/idRuRg9-n8o/maxresdefault.jpg"
-            alt="Pablo Pitani"
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
-          {/* Play button */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(0,0,0,0.3)",
-            }}
-          >
-            <div
-              style={{
-                width: 64,
-                height: 64,
-                borderRadius: "50%",
-                background: GOLD,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: `0 0 32px rgba(185,144,82,0.6)`,
-              }}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#000">
-                <polygon points="5,3 19,12 5,21" />
-              </svg>
-            </div>
-          </div>
-        </button>
-      )}
-
-      {/* iframe — only mounted after user clicks, starts with sound */}
-      {playing && (
-        <>
-          <iframe
-            src={src}
-            title="Pablo Pitani — Aliança Empreendedora"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{
-              position: "absolute",
-              top: "-14%",
-              left: "-5%",
-              width: "110%",
-              height: "128%",
-              border: "none",
-              zIndex: 2,
-            }}
-            data-testid="video-hero-youtube"
-          />
-          {/* Overlay — blocks hover so YouTube UI never shows */}
-          <div style={{ position: "absolute", inset: 0, zIndex: 10, cursor: "default" }} />
-        </>
-      )}
+      <iframe
+        src={src}
+        title="Pablo Pitani — Aliança Empreendedora"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{
+          position: "absolute",
+          top: "-14%",
+          left: "-5%",
+          width: "110%",
+          height: "128%",
+          border: "none",
+          zIndex: 2,
+        }}
+        data-testid="video-hero-youtube"
+      />
+      {/* Overlay — blocks hover so YouTube UI never shows */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 10, cursor: "default" }} />
     </div>
   );
 }
