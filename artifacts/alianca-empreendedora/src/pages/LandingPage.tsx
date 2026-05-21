@@ -90,28 +90,27 @@ function AnimatedList({ children, className = "" }: { children: React.ReactNode;
 }
 
 const painPoints = [
-  "Está sempre dependendo de indicação para vender o seu produto?",
-  "Atrai clientes que só buscam preço e não enxergam o seu valor?",
-  "Tem dificuldade de comunicar seu diferencial de forma clara e impactante?",
-  "Sente que seus conteúdos não trazem resultados para o seu negócio?",
-  "Atrai seguidores, mas poucos ou nenhum viram clientes?",
+  "A atrair clientes qualificados para o seu negócio sem depender de indicação.",
+  "Se diferenciar dos concorrentes e ser visto como a melhor opção do mercado.",
+  "A criar um posicionamento único para a sua marca tanto no digital quanto no físico.",
+  "A usar as redes sociais de forma estratégica para ser visto como uma autoridade.",
 ];
 
 const eventFeatures = [
   {
     icon: <Mic size={32} color={GOLD} />,
     title: "PALESTRA",
-    desc: "Serão 2h de palestra com conteúdo profundo e estratégico, pensado para empresários que querem aplicar tudo na prática. Você aprenderá como atrair mais clientes qualificados, fortalecer seu posicionamento e se diferenciar da concorrência com métodos claros e aplicáveis ao seu negócio.",
+    desc: "Serão 2 horas de conteúdo prático sobre posicionamento, marketing e vendas para você se diferenciar dos concorrentes, aumentar a sua percepção de valor e se tornar uma autoridade no seu mercado.",
   },
   {
     icon: <BarChart2 size={32} color={GOLD} />,
     title: "ANÁLISE DE POSICIONAMENTO",
-    desc: "Vamos analisar perfis reais do Instagram ao vivo e mostrar, na prática, o que está funcionando e o que precisa ser ajustado. Você vai entender como melhorar sua comunicação, fortalecer seu posicionamento e tornar seu perfil mais atrativo para clientes certos, transformando seguidores em oportunidades reais de negócio.",
+    desc: "Vamos analisar ao vivo alguns perfis do Instagram e mostrar exatamente o que precisa ser melhorado. Você verá como estruturar sua comunicação para atrair clientes que realmente vão pagar pelo o que você faz.",
   },
   {
     icon: <Users size={32} color={GOLD} />,
     title: "NETWORKING",
-    desc: "No evento, você terá a chance de ampliar sua rede de contatos, conectando-se com grandes empresários do Rio Grande do Sul. Um ambiente com um enorme potencial de parcerias e oportunidades que irão abrir portas e acelerar o crescimento do seu negócio.",
+    desc: "Você conhecerá empresários do Rio Grande do Sul para trocar conhecimento e potencializar os resultados do seu negócio. Além de grandes possibilidades de parcerias.",
   },
 ];
 
@@ -130,18 +129,18 @@ const photos = [
 
 const testimonials = [
   {
-    name: "Carlos Mendes",
-    role: "Empresário",
+    name: "Marcos Renner",
+    role: "Empresário no ramo da advocacia.",
     text: "O evento transformou a forma como eu me comunico com meus clientes. Pablo tem uma didática incrível e os resultados foram imediatos no meu negócio.",
     stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Carlos+Mendes&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
+    avatar: "https://ui-avatars.com/api/?name=Marcos+Renner&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
-    name: "Fernanda Lima",
-    role: "Empreendedora Digital",
+    name: "Gersiedma Malaquias",
+    role: "Empresária no ramo da estética.",
     text: "Nunca imaginei que em 3 horas eu poderia entender tudo que estava faltando no meu posicionamento. Valeu muito cada centavo investido.",
     stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Fernanda+Lima&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
+    avatar: "https://ui-avatars.com/api/?name=Gersiedma+Malaquias&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
     name: "Ricardo Santos",
@@ -154,16 +153,16 @@ const testimonials = [
 
 const faqs = [
   {
-    q: "Onde será o evento?",
-    a: "Av. Sergipe, 121 – Glória, Porto Alegre – RS, 91720-110",
+    q: "Vai ter coffee?",
+    a: "Sim, teremos um coffee durante o evento.",
   },
   {
-    q: "Quando será o evento?",
-    a: "O evento irá acontecer dia 28 de Maio de 2026 às 19:30",
+    q: "Vai ter espaço para perguntas?",
+    a: "Sim. Haverá momentos dedicados para interação e perguntas ao longo da palestra.",
   },
   {
-    q: "Quanto tempo irá durar o evento?",
-    a: "O evento irá durar 3 horas.",
+    q: "Essa palestra serve para qualquer tipo de negócio?",
+    a: "Sim. As estratégias ensinadas podem ser adaptadas para negócios locais, serviços, infoprodutos, e-commerce e empresas tradicionais.",
   },
 ];
 
@@ -346,7 +345,7 @@ function PainPointsSection() {
             className="text-3xl md:text-4xl text-center mb-4"
             style={{ fontFamily: "GFS Didot, Georgia, serif", color: GOLD }}
           >
-            Você se identifica com isso?
+            O que você irá aprender no evento:
           </h2>
           <GoldDivider />
         </AnimatedSection>
@@ -709,13 +708,16 @@ function TicketSection() {
               R$ 149,00
             </p>
           </div>
+          <p className="text-base text-gray-300 mb-2" style={{ fontFamily: "Montserrat" }}>
+            (Condição especial: Ingresso válido para duas pessoas)
+          </p>
           <p className="text-sm text-gray-400 mb-8" style={{ fontFamily: "Montserrat" }}>
-            Lotes esgotando — garanta o seu agora
+            Ingressos vendidos — garanta o seu agora
           </p>
 
           {/* Progress bar */}
           <div className="mb-2 flex justify-between items-center px-1">
-            <span className="text-xs text-gray-400" style={{ fontFamily: "Montserrat" }}>Lote vendido</span>
+            <span className="text-xs text-gray-400" style={{ fontFamily: "Montserrat" }}>Ingressos vendidos</span>
             <span className="text-sm font-bold" style={{ color: GOLD, fontFamily: "Montserrat" }}>68%</span>
           </div>
           <div
@@ -822,17 +824,17 @@ function MentorSection() {
               className="text-2xl font-bold mb-2"
               style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.05em" }}
             >
-              Especialista em Posicionamento Estratégico
+              Especialista em posicionamento pessoal e de marca.
             </h3>
             <p className="text-gray-300 leading-relaxed mb-8" style={{ fontFamily: "Montserrat", lineHeight: 1.9 }}>
-              Com mais de 25 anos de experiência prática e trajetória acadêmica na área da Psicologia, Pablo
-              Pitani é uma referência na transformação de empreendedores que buscam crescimento com autenticidade,
-              propósito e consistência estratégica. Especialista em posicionamento empresarial, ele une profundo
-              domínio do comportamento humano com inteligência de mercado para estruturar marcas pessoais sólidas,
-              coerentes e altamente competitivas. Mais de 15 mil pessoas já foram impactadas por seus ensinamentos.
+              Há 15 anos, Pablo estuda como as marcas conseguem se diferenciar dos concorrentes através de um
+              posicionamento autêntico. Ele criou um método único de posicionamento que junta o conhecimento em
+              psicologia, marketing e neurociência onde ele identifica a identidade pessoal do dono e consegue
+              encontrar o verdadeiro valor da marca, fazendo ela se tornar mais relevante e atrair clientes mais
+              qualificados. Mais de 10 mil pessoas passaram por suas palestras, mentorias e cursos.
             </p>
             <div className="flex flex-wrap gap-4">
-              {["25+ Anos de Experiência", "15.000+ Pessoas Impactadas", "Psicólogo e Especialista"].map((badge, i) => (
+              {["15+ Anos de Experiência", "10.000+ Pessoas Impactadas", "Psicólogo e Especialista"].map((badge, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full text-sm font-semibold"
@@ -958,6 +960,33 @@ function FAQSection() {
             </motion.div>
           ))}
         </AnimatedList>
+
+        <AnimatedSection className="mt-12 text-center">
+          <p className="text-white text-lg font-semibold mb-6" style={{ fontFamily: "Montserrat" }}>
+            Ainda possui alguma dúvida?
+          </p>
+          <motion.a
+            href="https://wa.me/5551999804338?text=Quero%20mais%20informa%C3%A7%C3%B5es%20da%20Alian%C3%A7a%20Empreendedora"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-3 px-10 py-4 text-sm font-semibold rounded-xl"
+            style={{
+              fontFamily: "Montserrat",
+              color: "#fff",
+              background: "#25D366",
+              boxShadow: "0 0 20px rgba(37,211,102,0.35)",
+              letterSpacing: "0.04em",
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.114 1.528 5.837L0 24l6.335-1.505A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.368l-.36-.214-3.724.885.936-3.617-.234-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+            </svg>
+            Falar com um atendente
+          </motion.a>
+        </AnimatedSection>
       </div>
     </section>
   );
