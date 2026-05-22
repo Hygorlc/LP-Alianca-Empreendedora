@@ -155,15 +155,15 @@ const testimonials = [
 const faqs = [
   {
     q: "Vai ter coffee?",
-    a: "Av. Sergipe, 121 – Glória, Porto Alegre – RS, 91720-110",
+    a: "Sim, teremos um coffee durante o evento.",
   },
   {
     q: "Vai ter espaço para perguntas?",
-    a: "O evento irá acontecer dia 28 de Maio de 2026 às 19:30",
+    a: "Sim. Haverá momentos dedicados para interação e perguntas ao longo da palestra.",
   },
   {
     q: "Essa palestra serve para qualquer tipo de negócio?",
-    a: "O evento irá durar 3 horas.",
+    a: "Sim. As estratégias ensinadas podem ser adaptadas para negócios locais, serviços, infoprodutos, e-commerce e empresas tradicionais.",
   },
 ];
 
