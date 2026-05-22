@@ -182,7 +182,7 @@ function GoldDivider() {
 
 function HeroVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=${isPlaying ? 1 : 0}&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1`;
+  const videoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663686944100/sBUdkpAThDXmVEOR.mov";
 
   return (
     <div
@@ -213,21 +213,13 @@ function HeroVideo() {
           </motion.div>
         </div>
       ) : (
-        <iframe
-          src={src}
-          title="Pablo Pitani — Aliança Empreendedora"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            border: "none",
-            zIndex: 2,
-          }}
-          data-testid="video-hero-youtube"
+        <video
+          src={videoUrl}
+          autoPlay
+          controls
+          className="absolute inset-0 w-full h-full object-cover z-2"
+          style={{ zIndex: 2 }}
+          data-testid="video-hero-custom"
         />
       )}
     </div>
