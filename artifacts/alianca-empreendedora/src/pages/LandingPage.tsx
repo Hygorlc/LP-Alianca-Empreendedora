@@ -313,7 +313,7 @@ function HeroSection() {
 
             <div className="flex justify-center lg:justify-start">
               <motion.a
-                href="#ingresso"
+                href="/inscricao"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all"
@@ -650,7 +650,7 @@ function StatementSection() {
         </h2>
         <div style={{ color: GOLD, fontSize: 48, lineHeight: 1, marginTop: 8, transform: "rotate(180deg)" }}>"</div>
         <motion.a
-          href="#ingresso"
+          href="/inscricao"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="inline-block mt-10 px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg"
@@ -713,9 +713,7 @@ function TicketSection() {
           </div>
 
           <motion.a
-            href="http://wa.me/5551999804338"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/inscricao"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="inline-block px-14 py-5 text-base font-bold uppercase tracking-widest rounded-xl"
