@@ -216,9 +216,14 @@ function HeroVideo() {
         <video
           src={videoUrl}
           autoPlay
-          controls
-          className="absolute inset-0 w-full h-full object-cover z-2"
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-2 cursor-pointer"
           style={{ zIndex: 2 }}
+          onClick={(e) => {
+            const v = e.currentTarget;
+            if (v.paused) v.play();
+            else v.pause();
+          }}
           data-testid="video-hero-custom"
         />
       )}
