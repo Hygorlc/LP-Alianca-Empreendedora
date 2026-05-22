@@ -90,28 +90,28 @@ function AnimatedList({ children, className = "" }: { children: React.ReactNode;
 }
 
 const painPoints = [
-  "Está sempre dependendo de indicação para vender o seu produto?",
-  "Atrai clientes que só buscam preço e não enxergam o seu valor?",
-  "Tem dificuldade de comunicar seu diferencial de forma clara e impactante?",
-  "Sente que seus conteúdos não trazem resultados para o seu negócio?",
-  "Atrai seguidores, mas poucos ou nenhum viram clientes?",
+  "A atrair clientes qualificados para o seu negócio sem depender de indicação.",
+  "Se diferenciar dos concorrentes e ser visto como a melhor opção do mercado.",
+  "A criar um posicionamento único para a sua marca tanto no digital quanto no físico.",
+  "A usar as redes sociais de forma estratégica para ser visto como uma autoridade.",
+  
 ];
 
 const eventFeatures = [
   {
     icon: <Mic size={32} color={GOLD} />,
     title: "PALESTRA",
-    desc: "Serão 2h de palestra com conteúdo profundo e estratégico, pensado para empresários que querem aplicar tudo na prática. Você aprenderá como atrair mais clientes qualificados, fortalecer seu posicionamento e se diferenciar da concorrência com métodos claros e aplicáveis ao seu negócio.",
+    desc: "Serão 2 horas de conteúdo prático sobre posicionamento, marketing e vendas para você se diferenciar dos concorrentes, aumentar a sua percepção de valor e se tornar uma autoridade no seu mercado.",
   },
   {
     icon: <BarChart2 size={32} color={GOLD} />,
     title: "ANÁLISE DE POSICIONAMENTO",
-    desc: "Vamos analisar perfis reais do Instagram ao vivo e mostrar, na prática, o que está funcionando e o que precisa ser ajustado. Você vai entender como melhorar sua comunicação, fortalecer seu posicionamento e tornar seu perfil mais atrativo para clientes certos, transformando seguidores em oportunidades reais de negócio.",
+    desc: "Vamos analisar ao vivo alguns perfis do Instagram e mostrar exatamente o que precisa ser melhorado. Você verá como estruturar sua comunicação para atrair clientes que realmente vão pagar pelo o que você faz.",
   },
   {
     icon: <Users size={32} color={GOLD} />,
     title: "NETWORKING",
-    desc: "No evento, você terá a chance de ampliar sua rede de contatos, conectando-se com grandes empresários do Rio Grande do Sul. Um ambiente com um enorme potencial de parcerias e oportunidades que irão abrir portas e acelerar o crescimento do seu negócio.",
+    desc: "Você conhecerá empresários do Rio Grande do Sul para trocar conhecimento e potencializar os resultados do seu negócio. Além de grandes possibilidades de parcerias.",
   },
 ];
 
@@ -130,23 +130,23 @@ const photos = [
 
 const testimonials = [
   {
-    name: "Carlos Mendes",
-    role: "Empresário",
-    text: "O evento transformou a forma como eu me comunico com meus clientes. Pablo tem uma didática incrível e os resultados foram imediatos no meu negócio.",
+    name: "Marcos Renner",
+    role: "Empresário no ramo da advocacia.",
+    text: "O evento foi transformador. O Pablo tem uma metodologia única que me ajudou a reposicionar meu escritório e atrair clientes muito mais qualificados.",
     stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Carlos+Mendes&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
+    avatar: "https://ui-avatars.com/api/?name=Marcos+Renner&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
-    name: "Fernanda Lima",
-    role: "Empreendedora Digital",
-    text: "Nunca imaginei que em 3 horas eu poderia entender tudo que estava faltando no meu posicionamento. Valeu muito cada centavo investido.",
+    name: "Gersiedma Malaquias",
+    role: "Empresária no ramo da estética.",
+    text: "Depois do evento, entendi exatamente o que precisava mudar no meu posicionamento. Os resultados vieram rápido e já estou atraindo clientes melhores.",
     stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Fernanda+Lima&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
+    avatar: "https://ui-avatars.com/api/?name=Gersiedma+Malaquias&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
-    name: "Ricardo Santos",
-    role: "Consultor",
-    text: "A análise de posicionamento ao vivo foi reveladora. Saí com um plano claro de ação e já estou implementando. Recomendo a todos os empresários.",
+    name: "",
+    role: "",
+    text: "",
     stars: 5,
     avatar: "https://ui-avatars.com/api/?name=Ricardo+Santos&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
@@ -154,15 +154,15 @@ const testimonials = [
 
 const faqs = [
   {
-    q: "Onde será o evento?",
+    q: "Vai ter coffee?",
     a: "Av. Sergipe, 121 – Glória, Porto Alegre – RS, 91720-110",
   },
   {
-    q: "Quando será o evento?",
+    q: "Vai ter espaço para perguntas?",
     a: "O evento irá acontecer dia 28 de Maio de 2026 às 19:30",
   },
   {
-    q: "Quanto tempo irá durar o evento?",
+    q: "Essa palestra serve para qualquer tipo de negócio?",
     a: "O evento irá durar 3 horas.",
   },
 ];
@@ -261,7 +261,7 @@ function HeroSection() {
               <span className="block">POSICIONAMENTO, MARKETING E VENDAS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "Montserrat" }}>
-              Você será visto como{" "}
+              Você será visto como uma{" "}
               <span style={{ color: GOLD }} className="font-semibold">autoridade no seu nicho</span>{" "}
               e irá{" "}
               <span style={{ color: GOLD }} className="font-semibold">atrair os clientes certos</span>{" "}
@@ -276,7 +276,7 @@ function HeroSection() {
               >
                 <Calendar size={18} color={GOLD} />
                 <div>
-                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19:30</p>
+                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19h 30</p>
                 </div>
               </div>
               <div
@@ -346,7 +346,7 @@ function PainPointsSection() {
             className="text-3xl md:text-4xl text-center mb-4"
             style={{ fontFamily: "GFS Didot, Georgia, serif", color: GOLD }}
           >
-            Você se identifica com isso?
+            O que você irá aprender no evento:
           </h2>
           <GoldDivider />
         </AnimatedSection>
@@ -822,17 +822,13 @@ function MentorSection() {
               className="text-2xl font-bold mb-2"
               style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.05em" }}
             >
-              Especialista em Posicionamento Estratégico
+              Especialista em posicionamento pessoal e de marca.
             </h3>
             <p className="text-gray-300 leading-relaxed mb-8" style={{ fontFamily: "Montserrat", lineHeight: 1.9 }}>
-              Com mais de 25 anos de experiência prática e trajetória acadêmica na área da Psicologia, Pablo
-              Pitani é uma referência na transformação de empreendedores que buscam crescimento com autenticidade,
-              propósito e consistência estratégica. Especialista em posicionamento empresarial, ele une profundo
-              domínio do comportamento humano com inteligência de mercado para estruturar marcas pessoais sólidas,
-              coerentes e altamente competitivas. Mais de 15 mil pessoas já foram impactadas por seus ensinamentos.
+              Há 15 anos, Pablo estuda como as marcas conseguem se diferenciar dos concorrentes através de um posicionamento autêntico. Ele criou um método único de posicionamento que junta o conhecimento em psicologia, marketing e neurociência onde ele identifica a identidade pessoal do dono e consegue encontrar o verdadeiro valor da marca, fazendo ela se tornar mais relevante e atrair Clientes mais qualificados. Mais de 10 mil pessoas passaram por suas palestras, mentorias e cursos, além de já ter feito diversos treinamentos corporativos para grandes empresas.
             </p>
             <div className="flex flex-wrap gap-4">
-              {["25+ Anos de Experiência", "15.000+ Pessoas Impactadas", "Psicólogo e Especialista"].map((badge, i) => (
+              {["Há 15 anos estudando", "10.000+ Pessoas Impactadas", "Psicologia, Marketing e Neurociência"].map((badge, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full text-sm font-semibold"
