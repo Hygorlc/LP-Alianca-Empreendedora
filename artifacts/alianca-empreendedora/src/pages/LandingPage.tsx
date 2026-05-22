@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, ChevronDown, CheckCircle, Mic, BarChart2, Users, Star, MessageCircle } from "lucide-react";
+import { Calendar, MapPin, ChevronDown, CheckCircle, Mic, BarChart2, Users, Star, MessageCircle, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -180,6 +180,50 @@ function GoldDivider() {
   );
 }
 
+function RegistrationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="relative w-full max-w-4xl bg-[#111] rounded-2xl border border-white/10 overflow-hidden shadow-2xl z-[110]"
+          >
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/50">
+              <h3 className="text-xl font-bold" style={{ color: GOLD }}>Inscrição Presencial</h3>
+              <button
+                onClick={onClose}
+                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/70 hover:text-white"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            <div className="relative w-full bg-white overflow-hidden" style={{ height: "80vh" }}>
+              <iframe
+                src="https://gestao-instituto-pitani.vercel.app/f/cmp064jlz00007v9wc1nxhvp4"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 'none' }}
+                title="Formulário de Inscrição"
+              ></iframe>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 function HeroVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663686944100/sBUdkpAThDXmVEOR.mov";
@@ -231,7 +275,7 @@ function HeroVideo() {
   );
 }
 
-function HeroSection() {
+function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
   const typed = useTypewriter(["EM PORTO ALEGRE"], 90, 55, 2200);
   return (
     <section
@@ -312,11 +356,11 @@ function HeroSection() {
             </div>
 
             <div className="flex justify-center lg:justify-start">
-              <motion.a
-                href="/inscricao"
+              <motion.button
+                onClick={onOpenModal}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all"
+                className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all cursor-pointer"
                 style={{
                   fontFamily: "Montserrat",
                   color: GOLD,
@@ -328,7 +372,7 @@ function HeroSection() {
                 data-testid="button-hero-cta"
               >
                 Quero garantir minha vaga
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         </div>
@@ -376,18 +420,13 @@ function PainPointsSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="flex items-start gap-4 px-6 py-5 rounded-lg"
-              style={{
-                background: "rgba(185,144,82,0.05)",
-                border: "1px solid rgba(185,144,82,0.2)",
-                borderLeft: `3px solid ${GOLD}`,
-              }}
-              data-testid={`text-pain-point-${i}`}
+              className="flex items-start gap-4 p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+              data-testid={`card-pain-point-${i}`}
             >
-              <CheckCircle size={22} color={GOLD} className="mt-0.5 shrink-0" />
-              <p className="text-gray-200 text-base leading-relaxed" style={{ fontFamily: "Montserrat" }}>
-                {point}
-              </p>
+              <div className="mt-1 flex-shrink-0">
+                <CheckCircle size={24} color={GOLD} />
+              </div>
+              <p className="text-lg text-gray-200" style={{ fontFamily: "Montserrat" }}>{point}</p>
             </motion.div>
           ))}
         </AnimatedList>
@@ -396,57 +435,49 @@ function PainPointsSection() {
   );
 }
 
-
-
 function FeaturesSection() {
   return (
-    <section className="py-24 px-6" style={{ background: "#0d0d0d" }}>
+    <section className="py-24 px-6 relative" style={{ background: "#000" }}>
       <div className="max-w-6xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            O que terá no evento:
+            Como vai funcionar:
           </p>
           <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            O que você vai aprender
+            Programação do evento
           </h2>
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {eventFeatures.map((feat, i) => (
+        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {eventFeatures.map((f, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
-              className="overflow-hidden rounded-2xl flex flex-col items-center text-center"
+              className="group rounded-2xl overflow-hidden flex flex-col h-full"
               style={{
                 background: "rgba(255,255,255,0.03)",
-                border: `1px solid rgba(185,144,82,0.25)`,
-                boxShadow: "0 4px 32px rgba(0,0,0,0.4)",
+                border: `1px solid rgba(185,144,82,0.2)`,
               }}
               data-testid={`card-feature-${i}`}
             >
-              <div className="w-full aspect-[4/3] overflow-hidden">
+              <div className="aspect-video w-full overflow-hidden">
                 <img 
-                  src={feat.image} 
-                  alt={feat.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  src={f.image} 
+                  alt={f.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
               </div>
-              <div className="p-8 flex flex-col gap-4 items-center">
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(185,144,82,0.12)", border: `1px solid rgba(185,144,82,0.3)` }}
-                >
-                  {feat.icon}
-                </div>
+              <div className="p-8 flex flex-col flex-1">
+                <div className="mb-6">{f.icon}</div>
                 <h3
-                  className="text-lg font-bold tracking-wide"
-                  style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.08em" }}
+                  className="text-xl font-bold mb-4"
+                  style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.05em" }}
                 >
-                  {feat.title}
+                  {f.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed" style={{ fontFamily: "Montserrat" }}>
-                  {feat.desc}
+                <p className="text-gray-400 leading-relaxed" style={{ fontFamily: "Montserrat" }}>
+                  {f.desc}
                 </p>
               </div>
             </motion.div>
@@ -457,45 +488,32 @@ function FeaturesSection() {
   );
 }
 
-function PhotosSection() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 3000, stopOnInteraction: false }),
-  ]);
-
+function GallerySection() {
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" }, [Autoplay({ delay: 3000 })]);
   return (
-    <section className="py-24 px-6" style={{ background: "#080808" }}>
-      <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="text-center mb-12">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Momentos do evento:
-          </p>
+    <section className="py-24 overflow-hidden" style={{ background: "#080808" }}>
+      <div className="max-w-6xl mx-auto px-6 mb-12 text-center">
+        <AnimatedSection>
           <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Fotos do evento
+            Edições anteriores
           </h2>
           <GoldDivider />
         </AnimatedSection>
+      </div>
 
-        <AnimatedSection>
-          <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
-            <div className="flex gap-4">
-              {photos.map((src, i) => (
-                <div
-                  key={i}
-                  className="shrink-0 rounded-xl overflow-hidden"
-                  style={{ flex: "0 0 calc(100% - 1rem)", maxWidth: "calc(66.666% - 1rem)" }}
-                  data-testid={`img-photo-${i}`}
-                >
-                  <img
-                    src={src}
-                    alt={`Foto do evento ${i + 1}`}
-                    className="w-full h-64 md:h-96 object-cover"
-                    style={{ borderRadius: 12 }}
-                  />
-                </div>
-              ))}
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container flex">
+          {photos.map((url, i) => (
+            <div key={i} className="embla__slide flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] px-3">
+              <div
+                className="rounded-2xl overflow-hidden aspect-[4/3]"
+                style={{ border: `1px solid rgba(185,144,82,0.3)` }}
+              >
+                <img src={url} alt="Evento" className="w-full h-full object-cover" data-testid={`img-gallery-${i}`} />
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -625,7 +643,7 @@ function TestimonialsSection() {
   );
 }
 
-function StatementSection() {
+function StatementSection({ onOpenModal }: { onOpenModal: () => void }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
@@ -649,11 +667,11 @@ function StatementSection() {
           <span style={{ color: GOLD }}>É como você está se posicionando.</span>
         </h2>
         <div style={{ color: GOLD, fontSize: 48, lineHeight: 1, marginTop: 8, transform: "rotate(180deg)" }}>"</div>
-        <motion.a
-          href="/inscricao"
+        <motion.button
+          onClick={onOpenModal}
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-block mt-10 px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg"
+          className="inline-block mt-10 px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg cursor-pointer"
           style={{
             fontFamily: "Montserrat",
             color: GOLD,
@@ -665,13 +683,13 @@ function StatementSection() {
           data-testid="button-statement-cta"
         >
           Quero resolver isso
-        </motion.a>
+        </motion.button>
       </motion.div>
     </section>
   );
 }
 
-function TicketSection() {
+function TicketSection({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <section id="ingresso" className="py-24 px-6" style={{ background: "#0a0a0a" }}>
       <div className="max-w-2xl mx-auto text-center">
@@ -712,11 +730,11 @@ function TicketSection() {
             />
           </div>
 
-          <motion.a
-            href="/inscricao"
+          <motion.button
+            onClick={onOpenModal}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-block px-14 py-5 text-base font-bold uppercase tracking-widest rounded-xl"
+            className="inline-block px-14 py-5 text-base font-bold uppercase tracking-widest rounded-xl cursor-pointer"
             style={{
               fontFamily: "Montserrat",
               color: "#0d0d0d",
@@ -727,7 +745,7 @@ function TicketSection() {
             data-testid="button-buy-ticket"
           >
             Quero meu ingresso
-          </motion.a>
+          </motion.button>
 
           <motion.a
             href="https://wa.me/5551999804338"
@@ -835,104 +853,107 @@ function LocationSection() {
       <div className="max-w-5xl mx-auto">
         <AnimatedSection className="text-center mb-12">
           <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Local do evento:
+            Onde será o evento:
           </p>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Onde acontece
-          </h2>
           <GoldDivider />
-          <p className="text-gray-300 mt-6 text-lg" style={{ fontFamily: "Montserrat" }}>
-            Av. Sergipe, 121 – Bairro Glória – Porto Alegre/RS, 91720-110
-          </p>
         </AnimatedSection>
 
-        <AnimatedSection>
-          <a
-            href="https://maps.google.com/?q=Av+Sergipe+121+Bairro+Gloria+Porto+Alegre+RS"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-2xl overflow-hidden hover:opacity-90 transition-opacity"
-            style={{
-              border: `1px solid rgba(185,144,82,0.3)`,
-              boxShadow: "0 0 32px rgba(185,144,82,0.1)",
-            }}
-            data-testid="link-location-map"
-          >
-            <img
-              src="https://pablopitani.com.br/wp-content/uploads/2025/07/mapa-sergipe-1-por-1.png"
-              alt="Mapa do evento - Av. Sergipe 121, Bairro Glória, Porto Alegre"
-              className="w-full max-h-96 object-cover"
-            />
-          </a>
-          <p className="text-center text-sm mt-4" style={{ color: GOLD, fontFamily: "Montserrat" }}>
-            Clique no mapa para abrir no Google Maps
-          </p>
-        </AnimatedSection>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <AnimatedSection>
+            <div className="flex flex-col gap-8">
+              <div className="flex items-start gap-4">
+                <MapPin size={28} color={GOLD} className="mt-1" />
+                <div>
+                  <h4 className="text-xl font-bold mb-2" style={{ fontFamily: "Montserrat" }}>Endereço:</h4>
+                  <p className="text-gray-300 text-lg" style={{ fontFamily: "Montserrat" }}>
+                    Bairro Glória<br />
+                    Porto Alegre - RS
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <Calendar size={28} color={GOLD} className="mt-1" />
+                <div>
+                  <h4 className="text-xl font-bold mb-2" style={{ fontFamily: "Montserrat" }}>Data e Horário:</h4>
+                  <p className="text-gray-300 text-lg" style={{ fontFamily: "Montserrat" }}>
+                    28 de Maio<br />
+                    Das 19h 30 às 21h 30
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <div
+              className="rounded-2xl overflow-hidden h-80 w-full"
+              style={{ border: `1px solid ${GOLD}`, boxShadow: "0 0 30px rgba(185,144,82,0.2)" }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.486241272765!2d-51.2065!3d-30.0688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzA3LjciUyA1McKwMTInMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1715610000000!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Mapa do local"
+              ></iframe>
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );
 }
 
-function FAQSection() {
-  const [open, setOpen] = useState<number | null>(null);
-
+function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <section className="py-24 px-6" style={{ background: "#0a0a0a" }}>
+    <section className="py-24 px-6" style={{ background: "#000" }}>
       <div className="max-w-3xl mx-auto">
-        <AnimatedSection className="text-center mb-12">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Dúvidas frequentes:
-          </p>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            FAQ
+        <AnimatedSection className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
+            Dúvidas Frequentes
           </h2>
           <GoldDivider />
         </AnimatedSection>
 
-        <AnimatedList className="space-y-3">
+        <div className="space-y-4">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              variants={fadeUp}
-              className="rounded-xl overflow-hidden"
-              style={{
-                border: `1px solid ${open === i ? GOLD : "rgba(185,144,82,0.2)"}`,
-                background: open === i ? "rgba(185,144,82,0.07)" : "rgba(255,255,255,0.02)",
-                transition: "border-color 0.3s",
-              }}
+              className="rounded-xl border border-white/10 overflow-hidden"
+              style={{ background: "rgba(255,255,255,0.02)" }}
               data-testid={`faq-item-${i}`}
             >
               <button
-                className="w-full flex items-center justify-between px-6 py-5 text-left"
-                onClick={() => setOpen(open === i ? null : i)}
-                data-testid={`button-faq-${i}`}
+                className="w-full p-6 text-left flex justify-between items-center"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="font-semibold text-white" style={{ fontFamily: "Montserrat" }}>
-                  {faq.q}
-                </span>
-                <motion.div animate={{ rotate: open === i ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown size={20} color={GOLD} />
-                </motion.div>
+                <span className="font-bold text-lg" style={{ fontFamily: "Montserrat" }}>{faq.q}</span>
+                <ChevronDown
+                  size={20}
+                  color={GOLD}
+                  style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0)", transition: "0.3s" }}
+                />
               </button>
               <AnimatePresence>
-                {open === i && (
+                {openIndex === i && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
                   >
-                    <p className="px-6 pb-5 text-gray-300 text-sm leading-relaxed" style={{ fontFamily: "Montserrat" }}>
+                    <div className="p-6 pt-0 text-gray-400 leading-relaxed" style={{ fontFamily: "Montserrat" }}>
                       {faq.a}
-                    </p>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
           ))}
-        </AnimatedList>
-
+        </div>
       </div>
     </section>
   );
@@ -940,38 +961,43 @@ function FAQSection() {
 
 function Footer() {
   return (
-    <footer className="py-12 px-6 text-center" style={{ background: "#050505" }}>
-      <GoldDivider />
-      <div className="mt-8">
-        <p
-          className="text-sm"
-          style={{ color: "#555", fontFamily: "Montserrat" }}
-          data-testid="text-footer-copyright"
-        >
-          Todos os direitos reservados a{" "}
-          <span style={{ color: GOLD }}>Pablo Pitani</span>
-        </p>
+    <footer className="py-12 px-6 border-t border-white/10" style={{ background: "#000" }}>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="text-center md:text-left">
+          <h3 className="text-xl font-bold mb-2 uppercase" style={{ fontFamily: "GFS Didot, Georgia, serif", color: GOLD }}>
+            Aliança Empreendedora
+          </h3>
+          <p className="text-gray-500 text-sm" style={{ fontFamily: "Montserrat" }}>
+            © 2026 Pablo Pitani. Todos os direitos reservados.
+          </p>
+        </div>
+        <div className="flex gap-6">
+          <a href="#" className="text-gray-400 hover:text-white transition-colors" style={{ fontFamily: "Montserrat" }}>Termos de Uso</a>
+          <a href="#" className="text-gray-400 hover:text-white transition-colors" style={{ fontFamily: "Montserrat" }}>Privacidade</a>
+        </div>
       </div>
     </footer>
   );
 }
 
 export default function LandingPage() {
-  return (
-    <div className="min-h-screen" style={{ background: "#0d0d0d" }}>
-      <HeroSection />
-      <PainPointsSection />
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  return (
+    <div className="bg-black text-white font-sans selection:bg-gold selection:text-black overflow-x-hidden">
+      <HeroSection onOpenModal={() => setIsModalOpen(true)} />
+      <PainPointsSection />
       <FeaturesSection />
-      <PhotosSection />
+      <GallerySection />
       <ReelSection />
       <TestimonialsSection />
-      <StatementSection />
-      <TicketSection />
+      <StatementSection onOpenModal={() => setIsModalOpen(true)} />
+      <TicketSection onOpenModal={() => setIsModalOpen(true)} />
       <MentorSection />
       <LocationSection />
-      <FAQSection />
+      <FaqSection />
       <Footer />
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
