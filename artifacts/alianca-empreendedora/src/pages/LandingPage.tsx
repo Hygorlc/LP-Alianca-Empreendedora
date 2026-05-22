@@ -181,35 +181,55 @@ function GoldDivider() {
 }
 
 function HeroVideo() {
-  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&loop=1&playlist=idRuRg9-n8o&disablekb=1`;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const src = `https://www.youtube.com/embed/idRuRg9-n8o?start=28&autoplay=${isPlaying ? 1 : 0}&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1`;
 
   return (
     <div
-      className="relative rounded-2xl overflow-hidden w-80 md:w-[440px] lg:w-[580px]"
+      className="relative rounded-2xl overflow-hidden w-full max-w-[640px]"
       style={{
         border: `2px solid rgba(185,144,82,0.4)`,
         boxShadow: "0 0 60px rgba(185,144,82,0.2)",
         aspectRatio: "16/9",
       }}
     >
-      <iframe
-        src={src}
-        title="Pablo Pitani — Aliança Empreendedora"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{
-          position: "absolute",
-          top: "-14%",
-          left: "-5%",
-          width: "110%",
-          height: "128%",
-          border: "none",
-          zIndex: 2,
-        }}
-        data-testid="video-hero-youtube"
-      />
-      {/* Overlay — blocks hover so YouTube UI never shows */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 10, cursor: "default" }} />
+      {!isPlaying ? (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 group cursor-pointer" onClick={() => setIsPlaying(true)}>
+          <img 
+            src="https://pablopitani.com.br/wp-content/uploads/2026/05/hero.png" 
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            alt="Thumbnail"
+          />
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="relative z-30 w-20 h-20 rounded-full flex items-center justify-center bg-gold/20 backdrop-blur-sm border-2 border-gold"
+            style={{ borderColor: GOLD }}
+          >
+            <div 
+              className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-b-[15px] border-b-transparent ml-2"
+              style={{ borderLeftColor: GOLD }}
+            />
+          </motion.div>
+        </div>
+      ) : (
+        <iframe
+          src={src}
+          title="Pablo Pitani — Aliança Empreendedora"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+            zIndex: 2,
+          }}
+          data-testid="video-hero-youtube"
+        />
+      )}
     </div>
   );
 }
@@ -236,7 +256,7 @@ function HeroSection() {
         style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center lg:items-start gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
         {/* Text content */}
         <div className="flex-1 w-full text-center lg:text-left">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -318,7 +338,7 @@ function HeroSection() {
 
         {/* Hero video */}
         <motion.div
-          className="flex-none flex justify-center w-full lg:w-auto lg:justify-end lg:sticky lg:top-24"
+          className="flex-1 flex justify-center w-full lg:justify-center"
           style={{ marginTop: "0" }}
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
