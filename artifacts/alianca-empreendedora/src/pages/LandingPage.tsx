@@ -376,56 +376,7 @@ function PainPointsSection() {
   );
 }
 
-function ThemeSection() {
-  return (
-    <section
-      className="py-24 px-6 diagonal-texture"
-      style={{ background: "linear-gradient(135deg, #0f0d06 0%, #0d0d0d 50%, #080600 100%)" }}
-    >
-      <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <AnimatedSection className="flex-1">
-          <p
-            className="uppercase text-sm tracking-widest mb-4"
-            style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}
-          >
-            Tema do próximo evento:
-          </p>
-          <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-none"
-            style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
-          >
-            FOUNDER
-            <br />
-            <span style={{ color: GOLD }}>LED GROWTH</span>
-          </h2>
-          <GoldDivider />
-          <p className="text-gray-300 text-base leading-relaxed mt-6" style={{ fontFamily: "Montserrat" }}>
-            Uma estratégia em que o fundador da empresa impulsiona a expansão dos negócios tornando-se a
-            principal voz e o rosto da marca, usando credibilidade pessoal e conhecimento para construir
-            confiança, gerar leads e criar uma forte conexão com os clientes.
-          </p>
-        </AnimatedSection>
 
-        <AnimatedSection className="flex-1">
-          <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              border: `1px solid rgba(185,144,82,0.3)`,
-              boxShadow: "0 0 40px rgba(185,144,82,0.15)",
-            }}
-          >
-            <img
-              src="https://pablopitani.com.br/wp-content/uploads/2025/12/590402507_18054759968653478_5220481283472751031_n-e1767046847737.jpg"
-              alt="Founder Led Growth"
-              className="w-full h-80 object-cover"
-              data-testid="img-theme-event"
-            />
-          </div>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
 
 function FeaturesSection() {
   return (
@@ -983,7 +934,7 @@ export default function LandingPage() {
     <div className="min-h-screen" style={{ background: "#0d0d0d" }}>
       <HeroSection />
       <PainPointsSection />
-      <ThemeSection />
+
       <FeaturesSection />
       <PhotosSection />
       <ReelSection />
