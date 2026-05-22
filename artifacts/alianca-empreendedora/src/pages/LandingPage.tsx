@@ -100,16 +100,19 @@ const painPoints = [
 const eventFeatures = [
   {
     icon: <Mic size={32} color={GOLD} />,
+    image: "https://pablopitani.com.br/wp-content/uploads/2026/05/FOTOS-7-12.png",
     title: "PALESTRA",
     desc: "Serão 2 horas de conteúdo prático sobre posicionamento, marketing e vendas para você se diferenciar dos concorrentes, aumentar a sua percepção de valor e se tornar uma autoridade no seu mercado.",
   },
   {
     icon: <BarChart2 size={32} color={GOLD} />,
+    image: "https://pablopitani.com.br/wp-content/uploads/2026/05/PANA6098-scaled.jpg",
     title: "ANÁLISE DE POSICIONAMENTO",
     desc: "Vamos analisar ao vivo alguns perfis do Instagram e mostrar exatamente o que precisa ser melhorado. Você verá como estruturar sua comunicação para atrair clientes que realmente vão pagar pelo o que você faz.",
   },
   {
     icon: <Users size={32} color={GOLD} />,
+    image: "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7691-1024x683-2.webp",
     title: "NETWORKING",
     desc: "Você conhecerá empresários do Rio Grande do Sul para trocar conhecimento e potencializar os resultados do seu negócio. Além de grandes possibilidades de parcerias.",
   },
@@ -397,7 +400,7 @@ function FeaturesSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="p-8 rounded-2xl flex flex-col gap-4 items-center text-center"
+              className="overflow-hidden rounded-2xl flex flex-col items-center text-center"
               style={{
                 background: "rgba(255,255,255,0.03)",
                 border: `1px solid rgba(185,144,82,0.25)`,
@@ -405,21 +408,30 @@ function FeaturesSection() {
               }}
               data-testid={`card-feature-${i}`}
             >
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(185,144,82,0.12)", border: `1px solid rgba(185,144,82,0.3)` }}
-              >
-                {feat.icon}
+              <div className="w-full aspect-[4/3] overflow-hidden">
+                <img 
+                  src={feat.image} 
+                  alt={feat.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
-              <h3
-                className="text-lg font-bold tracking-wide"
-                style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.08em" }}
-              >
-                {feat.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed" style={{ fontFamily: "Montserrat" }}>
-                {feat.desc}
-              </p>
+              <div className="p-8 flex flex-col gap-4 items-center">
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(185,144,82,0.12)", border: `1px solid rgba(185,144,82,0.3)` }}
+                >
+                  {feat.icon}
+                </div>
+                <h3
+                  className="text-lg font-bold tracking-wide"
+                  style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.08em" }}
+                >
+                  {feat.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed" style={{ fontFamily: "Montserrat" }}>
+                  {feat.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </AnimatedList>
