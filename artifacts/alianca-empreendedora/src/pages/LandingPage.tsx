@@ -317,7 +317,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
             style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
           >
             <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span><br/>sem reclamar, através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
-            <span className="block" style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.08em", opacity: 0.9 }}>independente da sua área de trabalho.</span>
+            <span className="block" style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.08em", opacity: 0.9, color: "#fff", textDecoration: "underline", textDecorationColor: "#B99052", textUnderlineOffset: "6px" }}>independente da sua área de trabalho.</span>
           </h1>
         </motion.div>
 
