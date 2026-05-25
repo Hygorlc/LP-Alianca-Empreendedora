@@ -90,11 +90,11 @@ function AnimatedList({ children, className = "" }: { children: React.ReactNode;
 }
 
 const painPoints = [
-  "A atrair clientes qualificados para o seu negócio sem depender de indicação.",
-  "Se diferenciar dos concorrentes e ser visto como a melhor opção do mercado.",
-  "A criar um posicionamento único para a sua marca tanto no digital quanto no físico.",
-  "A usar as redes sociais de forma estratégica para ser visto como uma autoridade.",
-  
+  "Por que o cliente que pergunta o preço primeiro nunca compra, e o que fazer para inverter essa ordem.",
+  "Como cobrar mais que o concorrente que sabe menos que você, sem perder venda (a maioria erra justamente aqui)",
+  "O método RCV de posicionamento que faz o cliente certo te procurar antes de você ir atrás dele",
+  "A diferença entre vender o que você faz e vender quem você é - e por que só uma das duas paga as contas e escala o faturamento do seu negócio.",
+  "O motivo real do teu Instagram não trazer cliente (não tem a ver com algoritmo, edição ou frequência de post)",
 ];
 
 const eventFeatures = [
@@ -102,19 +102,19 @@ const eventFeatures = [
     icon: <Mic size={32} color={GOLD} />,
     image: "https://pablopitani.com.br/wp-content/uploads/2026/05/FOTOS-7-12.png",
     title: "PALESTRA",
-    desc: "Serão 2 horas de conteúdo prático sobre posicionamento, marketing e vendas para você se diferenciar dos concorrentes, aumentar a sua percepção de valor e se tornar uma autoridade no seu mercado.",
+    desc: "2 horas de imersão prática no método que separa empresários comuns dos que são vistos como referência. Você vai entender por que a maioria está vendendo o produto errado e como construir uma percepção de valor que faz o cliente parar de comparar preço e começar a comparar autoridade.",
   },
   {
     icon: <BarChart2 size={32} color={GOLD} />,
     image: "https://pablopitani.com.br/wp-content/uploads/2026/05/PANA6098-scaled.jpg",
     title: "ANÁLISE DE POSICIONAMENTO",
-    desc: "Vamos analisar ao vivo alguns perfis do Instagram e mostrar exatamente o que precisa ser melhorado. Você verá como estruturar sua comunicação para atrair clientes que realmente vão pagar pelo o que você faz.",
+    desc: "Vamos abrir alguns perfis ao vivo e mostrar, sem rodeio, o que está fazendo o teu cliente certo passar reto. Você vai sair com clareza cirúrgica do que precisa mudar na tua comunicação pra começar a atrair quem paga pelo que você entrega, e não pelo menor preço do mercado.",
   },
   {
     icon: <Users size={32} color={GOLD} />,
     image: "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7691-1024x683-2.webp",
     title: "NETWORKING",
-    desc: "Você conhecerá empresários do Rio Grande do Sul para trocar conhecimento e potencializar os resultados do seu negócio. Além de grandes possibilidades de parcerias.",
+    desc: "Você vai estar na mesma sala com empresários do Rio Grande do Sul que estão construindo posicionamento sério, não amadores buscando dica fácil. É o tipo de ambiente onde nasce parceria, indicação e contrato real, porque a sala foi filtrada pelo próprio conteúdo do evento.",
   },
 ];
 
@@ -125,10 +125,8 @@ const photos = [
   "https://pablopitani.com.br/wp-content/uploads/2026/05/FOTOS-DIA-O2-36-1024x760.png",
   "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_82022-1-1024x683.webp",
   "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7691-1024x683-3.webp",
-  "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7706-1024x683-3.webp",
   "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_8103-2-1024x683.webp",
-  "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_8202-2-1024x683.webp",
-  "https://pablopitani.com.br/wp-content/uploads/2025/08/ALIANCA-EMPREENDEDORA-networking-scaled-e1755548208782-1024x429.webp",
+  "https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7706-1024x683-3.webp",
 ];
 
 const testimonials = [
@@ -136,867 +134,413 @@ const testimonials = [
     name: "Marcos Renner",
     role: "Empresário no ramo da advocacia.",
     text: "O evento foi transformador. O Pablo tem uma metodologia única que me ajudou a reposicionar meu escritório e atrair clientes muito mais qualificados.",
-    stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Marcos+Renner&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
   {
     name: "Gersiedma Malaquias",
     role: "Empresária no ramo da estética.",
     text: "Depois do evento, entendi exatamente o que precisava mudar no meu posicionamento. Os resultados vieram rápido e já estou atraindo clientes melhores.",
-    stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Gersiedma+Malaquias&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
-  },
-  {
-    name: "",
-    role: "",
-    text: "",
-    stars: 5,
-    avatar: "https://ui-avatars.com/api/?name=Ricardo+Santos&background=B99052&color=fff&size=80&bold=true&font-size=0.4",
   },
 ];
 
 const faqs = [
   {
-    q: "Vai ter coffee?",
-    a: "Sim, teremos um coffee durante o evento.",
+    q: "Essa palestra serve pra qualquer tipo de negócio?",
+    a: "Serve pra qualquer empresário ou profissional liberal que vende seu trabalho e quer parar de competir por preço. Já passaram pela sala advogados, médicos, esteticistas, arquitetos, consultores, donos de clínica, gestores de e-commerce e empresários do varejo. O método de posicionamento é universal, o que muda é a aplicação no seu nicho específico, que será trabalhada na análise ao vivo.",
   },
   {
-    q: "Vai ter espaço para perguntas?",
-    a: "Sim. Haverá momentos dedicados para interação e perguntas ao longo da palestra.",
+    q: "O ingresso é mesmo válido pra duas pessoas?",
+    a: "Sim. Por R$ 149 você pode trazer um sócio, sua esposa, seu marido, seu gerente de marketing ou quem você quiser que esteja envolvido nas decisões do seu negócio. Posicionamento muda quando a pessoa que decide junto com você está na mesma página.",
   },
   {
     q: "Essa palestra serve para qualquer tipo de negócio?",
     a: "Sim. As estratégias ensinadas podem ser adaptadas para negócios locais, serviços, infoprodutos, e-commerce e empresas tradicionais.",
   },
+  {
+    q: "E se eu não puder participar no dia, tem reembolso?",
+    a: "A Aliança é presencial e tem vagas limitadas. Por isso pedimos pra você só garantir a vaga se tem certeza que vai estar lá. Em caso de imprevisto sério, entre em contato pelo WhatsApp e a equipe vai avaliar caso a caso.",
+  },
+  {
+    q: "Vai ter espaço pra tirar dúvidas com o Pablo?",
+    a: "Sim. Boa parte da palestra é prática e interativa, incluindo a análise ao vivo de perfis. Quem quer falar com o Pablo tem espaço pra isso ali, no momento exato em que o conteúdo ainda está fresco.",
+  },
+  {
+    q: "Vai ter coffee?",
+    a: "Sim, coffee e ambiente preparado pra você se conectar com os outros empresários presentes.",
+  },
 ];
 
-function GoldDivider() {
-  return (
-    <div className="flex items-center gap-4 justify-center my-2">
-      <div style={{ height: 1, flex: 1, background: `linear-gradient(to right, transparent, ${GOLD})` }} />
-      <div style={{ width: 8, height: 8, background: GOLD, transform: "rotate(45deg)" }} />
-      <div style={{ height: 1, flex: 1, background: `linear-gradient(to left, transparent, ${GOLD})` }} />
-    </div>
-  );
-}
+export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [Autoplay({ delay: 4000, stopOnInteraction: false })]);
 
-function RegistrationModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-4xl bg-[#111] rounded-2xl border border-white/10 overflow-hidden shadow-2xl z-[110]"
-          >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/50">
-              <h3 className="text-xl font-bold" style={{ color: GOLD }}>Inscrição Presencial</h3>
-              <button
-                onClick={onClose}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white/70 hover:text-white"
-              >
-                <X size={24} />
-              </button>
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-[#B99052]/30">
+      {/* Header Fixo */}
+      <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#B99052] to-[#8C6D3E] rounded-lg flex items-center justify-center">
+              <span className="text-black font-bold text-xl">A</span>
             </div>
-            <div className="relative w-full bg-white overflow-hidden" style={{ height: "80vh" }}>
-              <iframe
-                src="https://gestao-instituto-pitani.vercel.app/f/cmp064jlz00007v9wc1nxhvp4"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                style={{ border: 'none' }}
-                title="Formulário de Inscrição"
-              ></iframe>
-            </div>
-          </motion.div>
+            <span className="font-Cinzel text-xl tracking-widest hidden sm:block">ALIANÇA</span>
+          </div>
+          
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#sobre" className="text-sm uppercase tracking-widest hover:text-[#B99052] transition-colors">O Evento</a>
+            <a href="#palestrante" className="text-sm uppercase tracking-widest hover:text-[#B99052] transition-colors">Palestrante</a>
+            <a href="#faq" className="text-sm uppercase tracking-widest hover:text-[#B99052] transition-colors">Dúvidas</a>
+            <a 
+              href="https://pablopitani.com.br/alianca-empreendedora-forms/"
+              className="px-6 py-2.5 bg-[#B99052] text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-[#D4AF37] transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-[#B99052]/20"
+            >
+              Garantir Vaga
+            </a>
+          </nav>
+
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(true)}>
+            <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-white"></div>
+          </button>
         </div>
-      )}
-    </AnimatePresence>
-  );
-}
+      </header>
 
-function HeroVideo() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663686944100/sBUdkpAThDXmVEOR.mov";
-
-  return (
-    <div
-      className="relative rounded-2xl overflow-hidden w-full max-w-[860px]"
-      style={{
-        border: `2px solid rgba(185,144,82,0.4)`,
-        boxShadow: "0 0 60px rgba(185,144,82,0.2)",
-        aspectRatio: "16/9",
-      }}
-    >
-      {!isPlaying ? (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 group cursor-pointer" onClick={() => setIsPlaying(true)}>
-          <img 
-            src="https://pablopitani.com.br/wp-content/uploads/2026/05/hero.png" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-            alt="Thumbnail"
-          />
+      {/* Menu Mobile */}
+      <AnimatePresence>
+        {isMenuOpen && (
           <motion.div 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative z-30 w-20 h-20 rounded-full flex items-center justify-center bg-gold/20 backdrop-blur-sm border-2 border-gold"
-            style={{ borderColor: GOLD }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center gap-8"
           >
-            <div 
-              className="w-0 h-0 border-t-[15px] border-t-transparent border-l-[25px] border-b-[15px] border-b-transparent ml-2"
-              style={{ borderLeftColor: GOLD }}
-            />
+            <button className="absolute top-8 right-8 text-white" onClick={() => setIsMenuOpen(false)}>
+              <X size={32} />
+            </button>
+            <a href="#sobre" onClick={() => setIsMenuOpen(false)} className="text-2xl font-Cinzel tracking-widest">O Evento</a>
+            <a href="#palestrante" onClick={() => setIsMenuOpen(false)} className="text-2xl font-Cinzel tracking-widest">Palestrante</a>
+            <a href="#faq" onClick={() => setIsMenuOpen(false)} className="text-2xl font-Cinzel tracking-widest">Dúvidas</a>
+            <a 
+              href="https://pablopitani.com.br/alianca-empreendedora-forms/"
+              onClick={() => setIsMenuOpen(false)}
+              className="px-10 py-4 bg-[#B99052] text-black font-bold uppercase tracking-widest rounded-full"
+            >
+              Garantir Vaga
+            </a>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#B99052]/10 rounded-full blur-[120px]"></div>
         </div>
-      ) : (
-        <video
-          src={videoUrl}
-          autoPlay
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-2 cursor-pointer"
-          style={{ zIndex: 2 }}
-          onClick={(e) => {
-            const v = e.currentTarget;
-            if (v.paused) v.play();
-            else v.pause();
-          }}
-          data-testid="video-hero-custom"
-        />
-      )}
-    </div>
-  );
-}
 
-function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
-  const typed = useTypewriter(["EM PORTO ALEGRE"], 90, 55, 2200);
-  return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse at 30% 50%, #1a1200 0%, #0d0d0d 60%, #000 100%)",
-      }}
-    >
-      {/* Diagonal lines texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(185,144,82,0.04) 60px, rgba(185,144,82,0.04) 61px)",
-        }}
-      />
-      {/* Gold glow top left */}
-      <div
-        className="absolute top-0 left-0 w-96 h-96 pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
-      />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 flex flex-col items-center gap-8">
-        {/* Above video: subtitle + title */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full text-center"
-        >
-          <div className="flex items-center gap-2 mb-4 justify-center">
-            <div style={{ width: 40, height: 2, background: GOLD }} />
-            <span style={{ color: GOLD, fontSize: "clamp(7px, 1.8vw, 16px)", letterSpacing: "clamp(0px, 0.08em, 0.15em)", fontFamily: "Montserrat", whiteSpace: "nowrap" }} className="uppercase font-semibold">
+        <div className="container mx-auto px-6 text-center">
+          <AnimatedSection>
+            <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[#B99052] text-xs font-bold uppercase tracking-[0.2em] mb-8">
               Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
             </span>
-            <div style={{ width: 40, height: 2, background: GOLD }} />
-          </div>
-          <h1
-            className="text-xl md:text-2xl font-bold leading-tight mb-6 uppercase" style={{ fontSize: "28px" }}
-            style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
-          >
-            <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span><br/>sem reclamar, através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
-            <span className="block" style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.08em", opacity: 0.9, color: "#fff", textDecoration: "underline", textDecorationColor: "#B99052", textUnderlineOffset: "6px" }}>independente da sua área de trabalho.</span>
-          </h1>
-        </motion.div>
-
-        {/* Hero video */}
-        <motion.div
-          className="flex justify-center w-full"
-          style={{ marginTop: "0" }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <HeroVideo />
-        </motion.div>
-
-        {/* Below video: paragraph + badges + CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-full text-center"
-        >
-          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "Montserrat" }}>
-            Quero fazer você ser visto como autoridade e nunca mais ter que implorar pra alguém comprar de você.
-          </p>
-
-          {/* Event badges */}
-          <div className="flex flex-wrap gap-4 mb-10 justify-center">
-            <div
-              className="flex items-center gap-3 px-5 py-3 rounded-lg"
-              style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
-            >
-              <Calendar size={18} color={GOLD} />
-              <div>
-                <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19h 30</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-Cinzel font-bold mb-8 leading-tight tracking-tight">
+              <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{color: GOLD}}>clientes que pagam caro</span><br/>sem reclamar, através de um <span style={{color: GOLD}}>posicionamento único</span>,</span>
+              <span className="block" style={{ 
+                fontFamily: "Cinzel, serif", 
+                fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", 
+                letterSpacing: "0.08em", 
+                opacity: 0.9, 
+                color: "#fff",
+                textDecoration: "underline",
+                textDecorationColor: "#B99052",
+                textUnderlineOffset: "6px"
+              }}>independente da sua área de trabalho.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+              Quero fazer você <span className="text-white font-medium italic">ser visto como autoridade</span> e nunca mais ter que implorar pra alguém comprar de você.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl w-full sm:w-auto">
+                <div className="w-12 h-12 bg-[#B99052]/10 rounded-xl flex items-center justify-center">
+                  <Calendar className="text-[#B99052]" size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Data e Horário</p>
+                  <p className="font-bold">28 de Maio às 19h 30</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl w-full sm:w-auto">
+                <div className="w-12 h-12 bg-[#B99052]/10 rounded-xl flex items-center justify-center">
+                  <MapPin className="text-[#B99052]" size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Localização</p>
+                  <p className="font-bold">Bairro Glória, Porto Alegre</p>
+                </div>
               </div>
             </div>
-            <div
-              className="flex items-center gap-3 px-5 py-3 rounded-lg"
-              style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
+
+            <a 
+              href="https://pablopitani.com.br/alianca-empreendedora-forms/"
+              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#B99052] text-black font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-[#B99052]/30"
             >
-              <MapPin size={18} color={GOLD} />
-              <div>
-                <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>Bairro Glória</p>
-                <p style={{ color: GOLD, fontSize: 12, fontFamily: "Montserrat" }}>Porto Alegre</p>
+              <span className="relative z-10">Quero garantir minha vaga</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </a>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* O que você vai descobrir */}
+      <section id="sobre" className="py-24 bg-zinc-950">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-8 leading-tight">
+                O que você vai descobrir nas <span className="text-[#B99052]">2 horas</span> da Aliança Presencial:
+              </h2>
+              <AnimatedList className="space-y-6">
+                {painPoints.map((point, i) => (
+                  <motion.div key={i} variants={fadeUp} className="flex items-start gap-4">
+                    <div className="mt-1.5 w-5 h-5 bg-[#B99052]/20 border border-[#B99052]/40 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-2 h-2 bg-[#B99052] rounded-full"></div>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{point}</p>
+                  </motion.div>
+                ))}
+              </AnimatedList>
+            </AnimatedSection>
+            
+            <AnimatedSection className="relative">
+              <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7691-1024x683-2.webp" 
+                  alt="Networking Event" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-            </div>
+              <div className="absolute -bottom-6 -left-6 bg-[#B99052] p-8 rounded-2xl shadow-2xl hidden md:block">
+                <p className="text-black font-Cinzel font-bold text-2xl">Networking Real</p>
+                <p className="text-black/80 text-sm">Empresários comprometidos</p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Features do Evento */}
+      <section className="py-24 border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-4 uppercase tracking-wider">O que terá no evento:</h2>
+            <div className="w-24 h-1 bg-[#B99052] mx-auto"></div>
           </div>
 
-          <div className="flex justify-center">
-            <motion.button
-              onClick={onOpenModal}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all cursor-pointer"
-              style={{
-                fontFamily: "Montserrat",
-                color: GOLD,
-                border: `2px solid ${GOLD}`,
-                background: "rgba(185,144,82,0.1)",
-                boxShadow: `0 0 24px rgba(185,144,82,0.35), 0 0 48px rgba(185,144,82,0.1)`,
-                letterSpacing: "0.12em",
-              }}
-              data-testid="button-hero-cta"
+          <div className="grid md:grid-cols-3 gap-8">
+            {eventFeatures.map((feature, i) => (
+              <AnimatedSection key={i} className="group p-8 bg-zinc-900/50 border border-white/5 rounded-3xl hover:border-[#B99052]/30 transition-all">
+                <div className="mb-6 overflow-hidden rounded-2xl aspect-video">
+                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <div className="mb-6">{feature.icon}</div>
+                <h3 className="text-xl font-Cinzel font-bold mb-4 tracking-wider">{feature.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria de Fotos */}
+      <section className="py-24 bg-black overflow-hidden">
+        <div className="container mx-auto px-6 mb-12 flex items-end justify-between">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-4 uppercase">Fotos do evento:</h2>
+            <p className="text-gray-500 uppercase tracking-widest text-xs font-bold">Vivencie a experiência Aliança</p>
+          </div>
+        </div>
+        
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container flex">
+            {photos.map((photo, i) => (
+              <div key={i} className="embla__slide flex-[0_0_80%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0 pl-6">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+                  <img src={photo} alt={"Evento " + i} className="w-full h-full object-cover" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testemunhos */}
+      <section className="py-24 bg-zinc-950">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-4 uppercase tracking-wider">O que estão falando:</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((t, i) => (
+              <AnimatedSection key={i} className="p-10 bg-black border border-white/5 rounded-3xl relative">
+                <Star className="text-[#B99052] mb-6" fill="#B99052" size={20} />
+                <p className="text-lg text-gray-300 italic mb-8 leading-relaxed">"{t.text}"</p>
+                <div>
+                  <p className="font-bold text-white uppercase tracking-widest text-sm">{t.name}</p>
+                  <p className="text-[#B99052] text-xs font-medium mt-1">{t.role}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Meio */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#B99052]/5 -z-10"></div>
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-8 max-w-4xl mx-auto">
+            O problema não é o que você vende. É como <span className="text-[#B99052]">você está se posicionando.</span>
+          </h2>
+          <div className="inline-block p-8 bg-zinc-900 border border-[#B99052]/20 rounded-3xl mb-12">
+            <p className="text-gray-400 uppercase tracking-widest text-xs font-bold mb-4">Garanta o seu ingresso nessa condição especial:</p>
+            <h3 className="text-2xl font-bold mb-2">Compre 2 ingressos pelo preço de 1</h3>
+            <div className="text-5xl font-Cinzel font-bold text-[#B99052] mb-6">R$ 149,00</div>
+            <a 
+              href="https://pablopitani.com.br/alianca-empreendedora-forms/"
+              className="block w-full py-4 bg-[#B99052] text-black font-bold uppercase tracking-widest rounded-xl hover:bg-[#D4AF37] transition-all"
             >
               Quero garantir minha vaga
-            </motion.button>
+            </a>
+            <div className="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-widest">
+              <span className="text-gray-500">Ingressos vendidos</span>
+              <span className="text-[#B99052]">68%</span>
+            </div>
+            <div className="mt-2 w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+              <div className="w-[68%] h-full bg-[#B99052]"></div>
+            </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <ChevronDown size={28} color={GOLD} />
-      </motion.div>
-    </section>
-  );
-}
-
-function PainPointsSection() {
-  return (
-    <section className="py-24 px-6" style={{ background: "#0a0a0a" }}>
-      <div className="max-w-3xl mx-auto">
-        <AnimatedSection>
-          <h2
-            className="text-3xl md:text-4xl text-center mb-4"
-            style={{ fontFamily: "GFS Didot, Georgia, serif", color: GOLD }}
-          >
-            O que você irá aprender no evento:
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <AnimatedList className="mt-12 space-y-4">
-          {painPoints.map((point, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="flex items-start gap-4 p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
-              data-testid={`card-pain-point-${i}`}
-            >
-              <div className="mt-1 flex-shrink-0">
-                <CheckCircle size={24} color={GOLD} />
+      {/* Palestrante */}
+      <section id="palestrante" className="py-24 bg-black">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
+                  <img 
+                    src="https://pablopitani.com.br/wp-content/uploads/elementor/thumbs/ChatGPT-Image-29-de-dez.-de-2025-19_36_48-rgw2gstnvxpfzssl7zts9aj0qakzo7spixh7mak8l8.png" 
+                    alt="Pablo Pitani" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 bg-zinc-900 border border-white/10 p-6 rounded-2xl hidden md:block">
+                  <div className="flex gap-1 mb-2">
+                    {[1,2,3,4,5].map(s => <Star key={s} size={14} fill="#B99052" color="#B99052" />)}
+                  </div>
+                  <p className="text-white font-bold text-sm uppercase tracking-widest">Especialista em Posicionamento</p>
+                </div>
               </div>
-              <p className="text-lg text-gray-200" style={{ fontFamily: "Montserrat" }}>{point}</p>
-            </motion.div>
-          ))}
-        </AnimatedList>
-      </div>
-    </section>
-  );
-}
-
-function FeaturesSection() {
-  return (
-    <section className="py-24 px-6 relative" style={{ background: "#000" }}>
-      <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Como vai funcionar:
-          </p>
-          <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Programação do evento
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {eventFeatures.map((f, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="group rounded-2xl overflow-hidden flex flex-col h-full"
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: `1px solid rgba(185,144,82,0.2)`,
-              }}
-              data-testid={`card-feature-${i}`}
-            >
-              <div className="aspect-video w-full overflow-hidden">
-                <img 
-                  src={f.image} 
-                  alt={f.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-              </div>
-              <div className="p-8 flex flex-col flex-1">
-                <div className="mb-6">{f.icon}</div>
-                <h3
-                  className="text-xl font-bold mb-4"
-                  style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.05em" }}
-                >
-                  {f.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed" style={{ fontFamily: "Montserrat" }}>
-                  {f.desc}
+            </AnimatedSection>
+            
+            <AnimatedSection>
+              <p className="text-[#B99052] font-bold uppercase tracking-[0.3em] mb-4">Quem será o palestrante:</p>
+              <h2 className="text-4xl md:text-6xl font-Cinzel font-bold mb-6">Pablo Pitani</h2>
+              <p className="text-xl text-gray-400 mb-8 font-light italic">Especialista em posicionamento pessoal e de marca.</p>
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  Há 15 anos, Pablo estuda como as marcas conseguem se diferenciar dos concorrentes através de um posicionamento autêntico. Ele criou um método único de posicionamento que junta o conhecimento em psicologia, marketing e neurociência onde ele identifica a identidade pessoal do dono e consegue encontrar le verdadeiro valor da marca, fazendo ela se tornar mais relevante e atrair Clientes mais qualificados.
+                </p>
+                <p>
+                  Mais de 10 mil pessoas passaram por suas palestras, mentorias e cursos, além de já ter feito diversos treinamentos corporativos para grandes empresas.
                 </p>
               </div>
-            </motion.div>
-          ))}
-        </AnimatedList>
-      </div>
-    </section>
-  );
-}
-
-function GallerySection() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" }, [Autoplay({ delay: 3000 })]);
-  return (
-    <section className="py-24 overflow-hidden" style={{ background: "#080808" }}>
-      <div className="max-w-6xl mx-auto px-6 mb-12 text-center">
-        <AnimatedSection>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Edições anteriores
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-      </div>
-
-      <div className="embla" ref={emblaRef}>
-        <div className="embla__container flex">
-          {photos.map((url, i) => (
-            <div key={i} className="embla__slide flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] px-3">
-              <div
-                className="rounded-2xl overflow-hidden aspect-[4/3]"
-                style={{ border: `1px solid rgba(185,144,82,0.3)` }}
-              >
-                <img src={url} alt="Evento" className="w-full h-full object-cover" data-testid={`img-gallery-${i}`} />
+              
+              <div className="grid grid-cols-2 gap-4 mt-12">
+                <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
+                  <p className="text-2xl font-bold text-[#B99052]">15 anos</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mt-1">De experiência</p>
+                </div>
+                <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
+                  <p className="text-2xl font-bold text-[#B99052]">10k+</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mt-1">Pessoas impactadas</p>
+                </div>
               </div>
-            </div>
-          ))}
+            </AnimatedSection>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function ReelSection() {
-  return (
-    <section className="py-24 px-6" style={{ background: "#0d0d0d" }}>
-      <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="text-center mb-12">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Veja como é:
-          </p>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            O evento em vídeo
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { id: "DVMehuniAIe", testId: "embed-instagram-reel-1" },
-            { id: "DWpBzHVk1Bb", testId: "embed-instagram-reel-2" },
-            { id: "DWzbWqxiNT-", testId: "embed-instagram-reel-3" },
-          ].map((reel) => (
-            <motion.div
-              key={reel.id}
-              variants={fadeUp}
-              className="rounded-2xl w-full"
-              style={{
-                border: `1px solid rgba(185,144,82,0.3)`,
-                boxShadow: "0 0 40px rgba(185,144,82,0.15)",
-                overflow: "hidden",
-                position: "relative",
-                height: 360,
-              }}
-              data-testid={reel.testId}
-            >
-              <iframe
-                src={`https://www.instagram.com/reel/${reel.id}/embed/`}
-                style={{
-                  border: "none",
-                  display: "block",
-                  width: "100%",
-                  height: 760,
-                  position: "absolute",
-                  top: -56,
-                  left: 0,
-                }}
-                allowFullScreen
-                scrolling="no"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-                title="Reel do evento Aliança Empreendedora"
-              />
-              {/* Overlay to block Instagram hover header */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: 80,
-                  zIndex: 10,
-                  cursor: "default",
-                }}
-              />
-            </motion.div>
-          ))}
-        </AnimatedList>
-      </div>
-    </section>
-  );
-}
-
-function TestimonialsSection() {
-  return (
-    <section className="py-24 px-6 diagonal-texture" style={{ background: "#0a0800" }}>
-      <div className="max-w-6xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Depoimentos:
-          </p>
-          <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            O que estão falando
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <AnimatedList className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="p-8 rounded-2xl flex flex-col gap-4"
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: `1px solid rgba(185,144,82,0.2)`,
-              }}
-              data-testid={`card-testimonial-${i}`}
-            >
-              <MessageCircle size={24} color={GOLD} />
-              <img
-                src="/5stars.png"
-                alt="5 estrelas"
-                style={{ height: 150, width: "auto", objectFit: "contain", marginTop: -40, marginBottom: -42 }}
-              />
-              <p className="text-gray-300 text-sm leading-relaxed italic" style={{ fontFamily: "Montserrat" }}>
-                "{t.text}"
-              </p>
-              <div className="mt-auto pt-4 flex items-center gap-3" style={{ borderTop: "1px solid rgba(185,144,82,0.2)" }}>
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="rounded-full flex-shrink-0"
-                  style={{ width: 40, height: 40, border: `2px solid ${GOLD}`, objectFit: "cover" }}
-                />
-                <div>
-                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>{t.name}</p>
-                  <p className="text-sm" style={{ color: GOLD, fontFamily: "Montserrat" }}>{t.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatedList>
-      </div>
-    </section>
-  );
-}
-
-function StatementSection({ onOpenModal }: { onOpenModal: () => void }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  return (
-    <section
-      className="py-28 px-6"
-      style={{ background: "linear-gradient(135deg, #0d0a04 0%, #0d0d0d 100%)" }}
-    >
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center"
-      >
-        <div style={{ color: GOLD, fontSize: 48, lineHeight: 1, marginBottom: 16 }}>"</div>
-        <h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
-          style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
-        >
-          O problema não é o que você vende.{" "}
-          <span style={{ color: GOLD }}>É como você está se posicionando.</span>
-        </h2>
-        <div style={{ color: GOLD, fontSize: 48, lineHeight: 1, marginTop: 8, transform: "rotate(180deg)" }}>"</div>
-        <motion.button
-          onClick={onOpenModal}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="inline-block mt-10 px-10 py-4 text-sm font-bold uppercase tracking-widest rounded-lg cursor-pointer"
-          style={{
-            fontFamily: "Montserrat",
-            color: GOLD,
-            border: `2px solid ${GOLD}`,
-            background: "rgba(185,144,82,0.1)",
-            boxShadow: `0 0 24px rgba(185,144,82,0.3)`,
-            letterSpacing: "0.12em",
-          }}
-          data-testid="button-statement-cta"
-        >
-          Quero resolver isso
-        </motion.button>
-      </motion.div>
-    </section>
-  );
-}
-
-function TicketSection({ onOpenModal }: { onOpenModal: () => void }) {
-  return (
-    <section id="ingresso" className="py-24 px-6" style={{ background: "#0a0a0a" }}>
-      <div className="max-w-2xl mx-auto text-center">
-        <AnimatedSection>
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Garanta seu ingresso:
-          </p>
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Valor do ingresso:
-          </h2>
-          <GoldDivider />
-
-          <div className="mt-10 mb-2">
-            <p className="text-7xl md:text-8xl font-bold" style={{ color: GOLD, fontFamily: "GFS Didot, Georgia, serif" }}>
-              R$ 149,00
-            </p>
-          </div>
-          <p className="text-sm text-gray-400 mb-8" style={{ fontFamily: "Montserrat" }}>
-            Lotes esgotando — garanta o seu agora
-          </p>
-
-          {/* Progress bar */}
-          <div className="mb-2 flex justify-between items-center px-1">
-            <span className="text-xs text-gray-400" style={{ fontFamily: "Montserrat" }}>Lote vendido</span>
-            <span className="text-sm font-bold" style={{ color: GOLD, fontFamily: "Montserrat" }}>68%</span>
-          </div>
-          <div
-            className="w-full h-3 rounded-full mb-10 overflow-hidden"
-            style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(185,144,82,0.2)" }}
-          >
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "68%" }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="h-full rounded-full"
-              style={{ background: `linear-gradient(90deg, ${GOLD}, #d4a853)`, boxShadow: `0 0 12px rgba(185,144,82,0.6)` }}
-            />
-          </div>
-
-          <motion.button
-            onClick={onOpenModal}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-block px-14 py-5 text-base font-bold uppercase tracking-widest rounded-xl cursor-pointer"
-            style={{
-              fontFamily: "Montserrat",
-              color: "#0d0d0d",
-              background: `linear-gradient(135deg, ${GOLD}, #c9a060, ${GOLD})`,
-              boxShadow: `0 0 32px rgba(185,144,82,0.5), 0 0 64px rgba(185,144,82,0.2)`,
-              letterSpacing: "0.1em",
-            }}
-            data-testid="button-buy-ticket"
-          >
-            Quero meu ingresso
-          </motion.button>
-
-          <motion.a
-            href="https://wa.me/5551999804338"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="mt-4 inline-flex items-center gap-3 px-10 py-4 text-sm font-semibold rounded-xl"
-            style={{
-              fontFamily: "Montserrat",
-              color: "#fff",
-              background: "#4a6741",
-              border: "1px solid #5a7a50",
-              boxShadow: "0 0 20px rgba(74,103,65,0.4)",
-              letterSpacing: "0.04em",
-            }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Quero falar com um atendente
-          </motion.a>
-
-          <p className="mt-6 text-xs text-gray-500" style={{ fontFamily: "Montserrat" }}>
-            Ao clicar, você sera redirecionado ao WhatsApp
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
-
-function MentorSection() {
-  return (
-    <section
-      className="py-24 px-6 diagonal-texture"
-      style={{ background: "linear-gradient(135deg, #0f0d06 0%, #0d0d0d 60%, #0a0800 100%)" }}
-    >
-      <div className="max-w-5xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Quem será o mentor:
-          </p>
-          <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Pablo Pitani
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <AnimatedSection className="flex-none">
-            <div
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden"
-              style={{
-                border: `3px solid ${GOLD}`,
-                boxShadow: `0 0 40px rgba(185,144,82,0.3), 0 0 80px rgba(185,144,82,0.1)`,
-              }}
-            >
-              <img
-                src="https://pablopitani.com.br/wp-content/uploads/elementor/thumbs/ChatGPT-Image-29-de-dez.-de-2025-19_36_48-rgw2gstnvxpfzssl7zts9aj0qakzo7spixh7mak8l8.png"
-                alt="Pablo Pitani"
-                className="w-full h-full object-cover"
-                data-testid="img-mentor"
-              />
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection className="flex-1">
-            <h3
-              className="text-2xl font-bold mb-2"
-              style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.05em" }}
-            >
-              Especialista em posicionamento pessoal e de marca.
-            </h3>
-            <p className="text-gray-300 leading-relaxed mb-8" style={{ fontFamily: "Montserrat", lineHeight: 1.9 }}>
-              Há 15 anos, Pablo estuda como as marcas conseguem se diferenciar dos concorrentes através de um posicionamento autêntico. Ele criou um método único de posicionamento que junta o conhecimento em psicologia, marketing e neurociência onde ele identifica a identidade pessoal do dono e consegue encontrar o verdadeiro valor da marca, fazendo ela se tornar mais relevante e atrair Clientes mais qualificados. Mais de 10 mil pessoas passaram por suas palestras, mentorias e cursos, além de já ter feito diversos treinamentos corporativos para grandes empresas.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              {["Há 15 anos estudando", "10.000+ Pessoas Impactadas", "Psicologia, Marketing e Neurociência"].map((badge, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 rounded-full text-sm font-semibold"
-                  style={{
-                    color: GOLD,
-                    border: `1px solid rgba(185,144,82,0.4)`,
-                    background: "rgba(185,144,82,0.08)",
-                    fontFamily: "Montserrat",
-                  }}
-                  data-testid={`badge-mentor-${i}`}
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LocationSection() {
-  return (
-    <section className="py-24 px-6" style={{ background: "#080808" }}>
-      <div className="max-w-5xl mx-auto">
-        <AnimatedSection className="text-center mb-12">
-          <p className="uppercase text-sm tracking-widest mb-2" style={{ color: GOLD, fontFamily: "Montserrat", letterSpacing: "0.2em" }}>
-            Onde será o evento:
-          </p>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <AnimatedSection>
-            <div className="flex flex-col gap-8">
-              <div className="flex items-start gap-4">
-                <MapPin size={28} color={GOLD} className="mt-1" />
-                <div>
-                  <h4 className="text-xl font-bold mb-2" style={{ fontFamily: "Montserrat" }}>Endereço:</h4>
-                  <p className="text-gray-300 text-lg" style={{ fontFamily: "Montserrat" }}>
-                    Bairro Glória<br />
-                    Porto Alegre - RS
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Calendar size={28} color={GOLD} className="mt-1" />
-                <div>
-                  <h4 className="text-xl font-bold mb-2" style={{ fontFamily: "Montserrat" }}>Data e Horário:</h4>
-                  <p className="text-gray-300 text-lg" style={{ fontFamily: "Montserrat" }}>
-                    28 de Maio<br />
-                    Das 19h 30 às 21h 30
-                  </p>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div
-              className="rounded-2xl overflow-hidden h-80 w-full"
-              style={{ border: `1px solid ${GOLD}`, boxShadow: "0 0 30px rgba(185,144,82,0.2)" }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.486241272765!2d-51.2065!3d-30.0688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzA3LjciUyA1McKwMTInMjMuNCJX!5e0!3m2!1spt-BR!2sbr!4v1715610000000!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
+      {/* Localização */}
+      <section className="py-24 bg-zinc-950">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-12 uppercase">Local do evento:</h2>
+            <div className="aspect-video rounded-3xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 mb-8">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.8248742544484!2d-51.2066847!3d-30.0705488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197828062031e3%3A0x6291611765f0282b!2sAv.%20Sergipe%2C%20121%20-%20Gl%C3%B3ria%2C%20Porto%20Alegre%20-%20RS%2C%2091710-140!5e0!3m2!1spt-BR!2sbr!4v1716674400000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
                 loading="lazy"
-                title="Mapa do local"
               ></iframe>
             </div>
-          </AnimatedSection>
+            <p className="text-xl text-gray-400">Av Sergipe 121, Bairro Glória, Porto Alegre/RS</p>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  return (
-    <section className="py-24 px-6" style={{ background: "#000" }}>
-      <div className="max-w-3xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl" style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}>
-            Dúvidas Frequentes
-          </h2>
-          <GoldDivider />
-        </AnimatedSection>
-
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              className="rounded-xl border border-white/10 overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.02)" }}
-              data-testid={`faq-item-${i}`}
-            >
-              <button
-                className="w-full p-6 text-left flex justify-between items-center"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              >
-                <span className="font-bold text-lg" style={{ fontFamily: "Montserrat" }}>{faq.q}</span>
-                <ChevronDown
-                  size={20}
-                  color={GOLD}
-                  style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0)", transition: "0.3s" }}
-                />
-              </button>
-              <AnimatePresence>
-                {openIndex === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="p-6 pt-0 text-gray-400 leading-relaxed" style={{ fontFamily: "Montserrat" }}>
-                      {faq.a}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+      {/* FAQ */}
+      <section id="faq" className="py-24 bg-black">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-Cinzel font-bold mb-4 uppercase">Dúvidas Frequentes:</h2>
+          </div>
+          
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <details key={i} className="group bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden">
+                <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors">
+                  <span className="font-bold text-lg pr-4">{faq.q}</span>
+                  <ChevronDown className="text-[#B99052] transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function Footer() {
-  return (
-    <footer className="py-12 px-6 border-t border-white/10" style={{ background: "#000" }}>
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-center md:text-left">
-          <h3 className="text-xl font-bold mb-2 uppercase" style={{ fontFamily: "GFS Didot, Georgia, serif", color: GOLD }}>
-            Aliança Empreendedora
-          </h3>
-          <p className="text-gray-500 text-sm" style={{ fontFamily: "Montserrat" }}>
-            © 2026 Pablo Pitani. Todos os direitos reservados.
-          </p>
+      {/* Footer */}
+      <footer className="py-12 bg-black border-t border-white/5">
+        <div className="container mx-auto px-6 text-center">
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="w-8 h-8 bg-[#B99052] rounded-lg flex items-center justify-center">
+              <span className="text-black font-bold text-lg">A</span>
+            </div>
+            <span className="font-Cinzel text-lg tracking-widest">ALIANÇA</span>
+          </div>
+          <p className="text-gray-500 text-sm mb-8">© 2024 Pablo Pitani. Todos os direitos reservados.</p>
+          <div className="flex justify-center gap-6">
+            <a href="https://pablopitani.com.br/alianca-empreendedora-forms/" className="text-gray-400 hover:text-[#B99052] transition-colors"><MessageCircle size={20} /></a>
+          </div>
         </div>
-        <div className="flex gap-6">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors" style={{ fontFamily: "Montserrat" }}>Termos de Uso</a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors" style={{ fontFamily: "Montserrat" }}>Privacidade</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
+      </footer>
 
-export default function LandingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <div className="bg-black text-white font-sans selection:bg-gold selection:text-black overflow-x-hidden">
-      <HeroSection onOpenModal={() => setIsModalOpen(true)} />
-      <PainPointsSection />
-      <FeaturesSection />
-      <GallerySection />
-      <ReelSection />
-      <TestimonialsSection />
-      <StatementSection onOpenModal={() => setIsModalOpen(true)} />
-      <TicketSection onOpenModal={() => setIsModalOpen(true)} />
-      <MentorSection />
-      <LocationSection />
-      <FaqSection />
-      <Footer />
-      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {/* Botão Flutuante WhatsApp */}
+      <a 
+        href="https://wa.me/5551999999999" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all"
+      >
+        <MessageCircle size={32} color="white" fill="white" />
+      </a>
     </div>
   );
 }
