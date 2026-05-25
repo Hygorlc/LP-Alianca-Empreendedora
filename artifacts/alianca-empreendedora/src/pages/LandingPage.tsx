@@ -232,60 +232,73 @@ export default function LandingPage() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex flex-col justify-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#B99052]/10 rounded-full blur-[120px]"></div>
         </div>
 
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-[#B99052] text-xs font-bold uppercase tracking-[0.2em] mb-8">
-              Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-Cinzel font-bold mb-8 leading-tight tracking-tight">
-              <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{color: GOLD}}>clientes que pagam caro</span><br/>sem reclamar, através de um <span style={{color: GOLD}}>posicionamento único</span>,</span>
-              <span className="block" style={{ 
-                fontFamily: "Cinzel, serif", 
-                fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", 
-                letterSpacing: "0.08em", 
-                opacity: 0.9, 
-                color: "#fff",
-                textDecoration: "underline",
-                textDecorationColor: "#B99052",
-                textUnderlineOffset: "6px"
-              }}>independente da sua área de trabalho.</span>
+            {/* Tag superior */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-[1px] w-12 bg-[#B99052]/50"></div>
+              <span className="text-[#B99052] text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">
+                Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
+              </span>
+              <div className="h-[1px] w-12 bg-[#B99052]/50"></div>
+            </div>
+
+            {/* Título Principal */}
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-Cinzel font-bold mb-12 leading-tight tracking-wider max-w-5xl mx-auto uppercase">
+              EM 2 HORAS EU VOU TE MOSTRAR COMO ATRAIR OS <span className="text-[#B99052]">CLIENTES QUE PAGAM CARO</span><br/>
+              SEM RECLAMAR, ATRAVÉS DE UM <span className="text-[#B99052]">POSICIONAMENTO ÚNICO</span>,<br/>
+              <span className="text-sm md:text-base tracking-[0.2em] font-normal underline underline-offset-8 decoration-[#B99052]">INDEPENDENTE DA SUA ÁREA DE TRABALHO.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-              Quero fazer você <span className="text-white font-medium italic">ser visto como autoridade</span> e nunca mais ter que implorar pra alguém comprar de você.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl w-full sm:w-auto">
-                <div className="w-12 h-12 bg-[#B99052]/10 rounded-xl flex items-center justify-center">
-                  <Calendar className="text-[#B99052]" size={24} />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Data e Horário</p>
-                  <p className="font-bold">28 de Maio às 19h 30</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl w-full sm:w-auto">
-                <div className="w-12 h-12 bg-[#B99052]/10 rounded-xl flex items-center justify-center">
-                  <MapPin className="text-[#B99052]" size={24} />
-                </div>
-                <div className="text-left">
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Localização</p>
-                  <p className="font-bold">Bairro Glória, Porto Alegre</p>
+
+            {/* Vídeo/Imagem Central */}
+            <div className="relative max-w-4xl mx-auto mb-12 group">
+              <div className="aspect-video rounded-3xl overflow-hidden border-2 border-[#B99052]/30 shadow-[0_0_50px_rgba(185,144,82,0.15)] bg-zinc-900">
+                <img 
+                  src="https://pablopitani.com.br/wp-content/uploads/2025/08/DMF_7691-1024x683-2.webp" 
+                  alt="Pablo Pitani" 
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                {/* Overlay de Play simulado na imagem */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="bg-black/20 backdrop-blur-sm px-6 py-2 rounded-lg border border-white/10">
+                      <span className="font-Cinzel text-white tracking-widest text-xl">bem vindo</span>
+                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Subtítulo */}
+            <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto mb-12 font-light tracking-wide leading-relaxed">
+              Quero fazer você ser visto como autoridade e nunca mais ter que<br/>
+              implorar pra alguém comprar de você.
+            </p>
+            
+            {/* Informações de Data e Local */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <div className="flex items-center gap-3 px-6 py-3 border border-[#B99052]/30 rounded-xl bg-zinc-900/50 min-w-[240px] justify-center">
+                <Calendar className="text-[#B99052]" size={18} />
+                <span className="text-sm font-bold tracking-wide">28 de Maio às 19h 30</span>
+              </div>
+              <div className="flex items-center gap-3 px-6 py-3 border border-[#B99052]/30 rounded-xl bg-zinc-900/50 min-w-[240px] justify-center">
+                <MapPin className="text-[#B99052]" size={18} />
+                <div className="text-left">
+                  <p className="text-sm font-bold tracking-wide leading-none">Bairro Glória</p>
+                  <p className="text-[10px] text-gray-500 font-bold mt-1">Porto Alegre</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Botão Principal */}
             <a 
               href="https://pablopitani.com.br/alianca-empreendedora-forms/"
-              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#B99052] text-black font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-[#B99052]/30"
+              className="inline-block px-12 py-5 border-2 border-[#B99052] text-[#B99052] font-bold uppercase tracking-[0.3em] rounded-xl hover:bg-[#B99052] hover:text-black transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg shadow-[#B99052]/10"
             >
-              <span className="relative z-10">Quero garantir minha vaga</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              Quero garantir minha vaga
             </a>
           </AnimatedSection>
         </div>
