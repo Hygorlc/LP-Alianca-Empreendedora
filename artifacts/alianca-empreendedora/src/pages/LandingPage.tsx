@@ -318,7 +318,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
           >
             <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
             <span className="block">através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
-            <span className="block">independente da sua área de trabalho.</span>
+            <span className="block" style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.08em", opacity: 0.9 }}>independente da sua área de trabalho.</span>
           </h1>
         </motion.div>
 
