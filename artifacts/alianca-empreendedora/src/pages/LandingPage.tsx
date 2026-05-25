@@ -230,7 +230,7 @@ function HeroVideo() {
 
   return (
     <div
-      className="relative rounded-2xl overflow-hidden w-full max-w-[640px]"
+      className="relative rounded-2xl overflow-hidden w-full max-w-[860px]"
       style={{
         border: `2px solid rgba(185,144,82,0.4)`,
         boxShadow: "0 0 60px rgba(185,144,82,0.2)",
@@ -316,8 +316,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
             className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 uppercase"
             style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
           >
-            <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
-            <span className="block">através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
+            <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,<br/>através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
             <span className="block" style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)", letterSpacing: "0.08em", opacity: 0.9 }}>independente da sua área de trabalho.</span>
           </h1>
         </motion.div>
