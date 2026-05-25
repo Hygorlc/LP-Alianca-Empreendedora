@@ -297,9 +297,9 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
         style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-6">
         {/* Text content */}
-        <div className="flex-1 w-full text-center lg:text-left">
+        <div className="flex-1 w-full text-center lg:text-left max-w-xl">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
               <div style={{ width: 40, height: 2, background: GOLD }} />
@@ -308,7 +308,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
               </span>
             </div>
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 uppercase"
+              className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 uppercase"
               style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
             >
               <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
