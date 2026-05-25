@@ -304,32 +304,19 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
             <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
               <div style={{ width: 40, height: 2, background: GOLD }} />
               <span style={{ color: GOLD, fontSize: 12, letterSpacing: "0.2em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
-                Evento Presencial
+                Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
               </span>
             </div>
             <h1
               className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 uppercase"
               style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
             >
-              <span className="block">TREINAMENTO PRESENCIAL</span>
-              <span
-                className="block"
-                style={{
-                  color: GOLD,
-                  minHeight: "1.2em",
-                  display: "block",
-                }}
-              >
-                {typed}
-              </span>
-              <span className="block">POSICIONAMENTO, MARKETING E VENDAS</span>
+              <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
+              <span className="block">através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
+              <span className="block">independente da sua área de trabalho.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "Montserrat" }}>
-              Você será visto como uma{" "}
-              <span style={{ color: GOLD }} className="font-semibold">autoridade no seu nicho</span>{" "}
-              e irá{" "}
-              <span style={{ color: GOLD }} className="font-semibold">atrair os clientes certos</span>{" "}
-              para o seu negócio
+                  Quero fazer você ser visto como autoridade e nunca mais ter que implorar pra alguém comprar de você.
             </p>
 
             {/* Event badges */}
