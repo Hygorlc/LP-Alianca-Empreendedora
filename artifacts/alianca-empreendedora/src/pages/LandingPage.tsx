@@ -307,7 +307,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
         >
           <div className="flex items-center gap-2 mb-4 justify-center">
             <div style={{ width: 40, height: 2, background: GOLD }} />
-            <span style={{ color: GOLD, fontSize: 12, letterSpacing: "0.2em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
+            <span style={{ color: GOLD, fontSize: 16, letterSpacing: "0.15em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
               Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
             </span>
             <div style={{ width: 40, height: 2, background: GOLD }} />
