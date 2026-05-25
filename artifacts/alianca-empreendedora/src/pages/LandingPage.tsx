@@ -297,82 +297,95 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
         style={{ background: "radial-gradient(circle, rgba(185,144,82,0.15) 0%, transparent 70%)" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-6">
-        {/* Text content */}
-        <div className="flex-1 w-full text-center lg:text-left max-w-xl">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
-              <div style={{ width: 40, height: 2, background: GOLD }} />
-              <span style={{ color: GOLD, fontSize: 12, letterSpacing: "0.2em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
-                Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
-              </span>
-            </div>
-            <h1
-              className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 uppercase"
-              style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
-            >
-              <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
-              <span className="block">através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
-              <span className="block">independente da sua área de trabalho.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0" style={{ fontFamily: "Montserrat" }}>
-                  Quero fazer você ser visto como autoridade e nunca mais ter que implorar pra alguém comprar de você.
-            </p>
-
-            {/* Event badges */}
-            <div className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
-              <div
-                className="flex items-center gap-3 px-5 py-3 rounded-lg"
-                style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
-              >
-                <Calendar size={18} color={GOLD} />
-                <div>
-                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19h 30</p>
-                </div>
-              </div>
-              <div
-                className="flex items-center gap-3 px-5 py-3 rounded-lg"
-                style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
-              >
-                <MapPin size={18} color={GOLD} />
-                <div>
-                  <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>Bairro Glória</p>
-                  <p style={{ color: GOLD, fontSize: 12, fontFamily: "Montserrat" }}>Porto Alegre</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center lg:justify-start">
-              <motion.button
-                onClick={onOpenModal}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all cursor-pointer"
-                style={{
-                  fontFamily: "Montserrat",
-                  color: GOLD,
-                  border: `2px solid ${GOLD}`,
-                  background: "rgba(185,144,82,0.1)",
-                  boxShadow: `0 0 24px rgba(185,144,82,0.35), 0 0 48px rgba(185,144,82,0.1)`,
-                  letterSpacing: "0.12em",
-                }}
-                data-testid="button-hero-cta"
-              >
-                Quero garantir minha vaga
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 flex flex-col items-center gap-8">
+        {/* Above video: subtitle + title */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="w-full text-center"
+        >
+          <div className="flex items-center gap-2 mb-4 justify-center">
+            <div style={{ width: 40, height: 2, background: GOLD }} />
+            <span style={{ color: GOLD, fontSize: 12, letterSpacing: "0.2em", fontFamily: "Montserrat" }} className="uppercase font-semibold">
+              Treinamento Presencial em Porto Alegre para Empresários Sérios e Comprometidos
+            </span>
+            <div style={{ width: 40, height: 2, background: GOLD }} />
+          </div>
+          <h1
+            className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 uppercase"
+            style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
+          >
+            <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,</span>
+            <span className="block">através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
+            <span className="block">independente da sua área de trabalho.</span>
+          </h1>
+        </motion.div>
 
         {/* Hero video */}
         <motion.div
-          className="flex-1 flex justify-center w-full lg:justify-center"
+          className="flex justify-center w-full"
           style={{ marginTop: "0" }}
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <HeroVideo />
+        </motion.div>
+
+        {/* Below video: paragraph + badges + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="w-full text-center"
+        >
+          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "Montserrat" }}>
+            Quero fazer você ser visto como autoridade e nunca mais ter que implorar pra alguém comprar de você.
+          </p>
+
+          {/* Event badges */}
+          <div className="flex flex-wrap gap-4 mb-10 justify-center">
+            <div
+              className="flex items-center gap-3 px-5 py-3 rounded-lg"
+              style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
+            >
+              <Calendar size={18} color={GOLD} />
+              <div>
+                <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>28 de Maio às 19h 30</p>
+              </div>
+            </div>
+            <div
+              className="flex items-center gap-3 px-5 py-3 rounded-lg"
+              style={{ border: `1px solid ${GOLD}`, background: "rgba(185,144,82,0.08)" }}
+            >
+              <MapPin size={18} color={GOLD} />
+              <div>
+                <p className="text-white font-semibold text-sm" style={{ fontFamily: "Montserrat" }}>Bairro Glória</p>
+                <p style={{ color: GOLD, fontSize: 12, fontFamily: "Montserrat" }}>Porto Alegre</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <motion.button
+              onClick={onOpenModal}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block px-10 py-4 text-base font-bold uppercase tracking-widest rounded-lg transition-all cursor-pointer"
+              style={{
+                fontFamily: "Montserrat",
+                color: GOLD,
+                border: `2px solid ${GOLD}`,
+                background: "rgba(185,144,82,0.1)",
+                boxShadow: `0 0 24px rgba(185,144,82,0.35), 0 0 48px rgba(185,144,82,0.1)`,
+                letterSpacing: "0.12em",
+              }}
+              data-testid="button-hero-cta"
+            >
+              Quero garantir minha vaga
+            </motion.button>
+          </div>
         </motion.div>
       </div>
 
