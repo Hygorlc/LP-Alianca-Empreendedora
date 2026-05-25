@@ -313,7 +313,7 @@ function HeroSection({ onOpenModal }: { onOpenModal: () => void }) {
             <div style={{ width: 40, height: 2, background: GOLD }} />
           </div>
           <h1
-            className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-6 uppercase"
+            className="text-xl md:text-2xl lg:text-2xl font-bold leading-tight mb-6 uppercase"
             style={{ fontFamily: "GFS Didot, Georgia, serif", color: "#fff" }}
           >
             <span className="block">Em 2 horas eu vou te mostrar como atrair os <span style={{ color: GOLD }}>clientes que pagam caro</span> sem reclamar,<br/>através de um <span style={{ color: GOLD }}>posicionamento único</span>,</span>
